@@ -1,0 +1,58 @@
+<div class="card card-table mb-4">
+    <div class="card-header ">
+        <h5 class="card-heading">Lista de Pacientes</h5>
+    </div>
+    <div class="card-body">
+        <div class="preload-wrapper opacity-10">
+            <div class="table-responsive">
+                <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+                    <div class="dataTable-top">
+                        <div class="dataTable-search">
+                            <input class="dataTable-input  form-control-sm" placeholder="Search..." type="text"
+                                (keyup)="search($event)">
+                        </div>
+                    </div>
+                    <div class="dataTable-container border-0">
+                        <table class="table table-hover text-sm text-gray-700 mb-0 dataTable-table"
+                            id="ordersDatatable">
+                            <thead>
+                                <tr class="titles">
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">Nombre</a>
+                                    </th>
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">DNI</a></th>
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">Edad</a></th>
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">Genero</a>
+                                    </th>
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">Ver</a></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tr align-middle" *ngFor="let data of ListPrint; index as i">
+                                    <td class="td text-center">
+                                        {{data.firstname}}
+                                    </td>
+                                    <td class="td text-center">
+                                        {{data.dni}}
+                                    </td>
+                                    <td class="td text-center">
+                                        {{data.age}}
+                                    </td>
+                                    <td class="td text-center">
+                                        {{data.gender}}
+                                    </td>
+                                    <td class="bteye" (click)="routeInfoP()"> <i class="eye fa fa-eye" style="width: 100%;text-align: center"
+                                            aria-hidden="true"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

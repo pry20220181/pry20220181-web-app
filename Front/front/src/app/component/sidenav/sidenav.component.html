@@ -1,0 +1,14 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+    <div class="logo-container text-center" *ngIf="collapsed">
+        <img class="img img-fluid mb-4" width="500" src="assets/img/logo.jpg" alt="idk">
+    </div>
+    <ul class="sidenav-nav" *ngIf="collapsed">
+        <li class="sidenav-nav-item" *ngFor="let data of navData" (click)="ValidateLogOut(data.routeLink)" (click)="toggleCollapse()">
+            <a class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" [class]="data.icon"></i>
+                <span class="sidenav-link-text" *ngIf="collapsed"> {{data.label}}</span>
+            </a>
+        </li>
+    </ul>
+</div>>

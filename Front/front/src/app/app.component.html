@@ -1,0 +1,10 @@
+<app-navbar [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth" (onToggleNavBar)="onToggleNavBar($event)">
+</app-navbar>
+<app-sidenav [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth" (onToggleSideNav)="onToggleNavBar($event)">
+</app-sidenav>
+<app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth" ></app-body>
+
+
+<div *ngIf="modal; else elseBlock"><app-modal> </app-modal> </div>
+<ng-template #elseBlock></ng-template>
+
