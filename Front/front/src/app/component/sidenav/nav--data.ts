@@ -1,6 +1,6 @@
-export const navbarData = [
+export const navbarDataDoctor = [
     {
-        routeLink:'home',
+        routeLink:'homeD',
         icon: 'fal fa-home',
         label: 'Inicio'
     },
@@ -25,6 +25,24 @@ export const navbarData = [
         label: 'Inventario de Vacunas'
     },
     {
+        routeLink:'login',
+        icon: 'fal fa-exclamation-triangle',
+        label: 'logout'
+    },
+]
+
+export const navbarDataParents = [
+    {
+        routeLink:'homeP',
+        icon: 'fal fa-home',
+        label: 'Inicio'
+    },
+    {
+        routeLink:'list-va-vp',
+        icon: 'fal fa-solid fa-syringe',
+        label: 'Vacunación'
+    },
+     {
         routeLink:'login',
         icon: 'fal fa-exclamation-triangle',
         label: 'logout'

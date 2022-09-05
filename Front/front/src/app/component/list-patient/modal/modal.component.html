@@ -1,27 +1,43 @@
-
 <!-- Modal -->
 <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="toggleleModal()"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="toggleleModal()"></button>
       </div>
       <div class="modal-body">
         <div class="container text-center">
           <div class="row">
             <div class="col">
-              1 of 2
+              <div class="List">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">DNI: {{dni}}</li>
+                  <li class="list-group-item">Vacuna: {{ListVaccinationRe.vaccineName}}</li>
+                  <li class="list-group-item">Dosis: {{ListVaccinationRe.doseNumber}} </li>
+                </ul>
+              </div>
             </div>
             <div class="col">
-              2 of 2
+              <div class="mb-3">
+                Centro de Salud
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="healthcenter" [ngModelOptions]="{standalone: true}">
+                  <option  *ngFor="let data of ListHealthCenter; index as i" [value]="data.healthCenterId">{{data.name}}l</option>
+                </select>
+              </div>
+              <div class="">
+                Fecha y Hora
+                <input type="date" name="begin" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31">
+                <input type="time" id="appt" name="appt">
+              </div>
             </div>
           </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="toggleleModal()">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="toggleleModal()">Close</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="RegisterModal()">Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>

@@ -1,0 +1,67 @@
+<div class="card card-table mb-4">
+    <div class="card-header ">
+        <h5 class="card-heading">Lista de Hijos</h5>
+    </div>
+    <div class="card-body">
+        <div class="preload-wrapper opacity-10">
+            <div class="table-responsive">
+                <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
+                    <div class="dataTable-top">
+                        <div class="dataTable-search">
+                            <select class="form-select" aria-label="Default select example" [(ngModel)]="childId"
+                                [ngModelOptions]="{standalone: true}" (click)="viewdata()">
+                                <option *ngFor="let data of ListChild; index as i" [value]="data.childId">
+                                    {{data.firstname}}l</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dataTable-container border-0">
+                        <table class="table table-hover text-sm text-gray-700 mb-0 dataTable-table"
+                            id="ordersDatatable">
+                            <thead>
+                                <tr class="titles">
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">Esquema
+                                            Vacunacion</a>
+                                    </th>
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">Vacunas</a>
+                                    </th>
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">Dosis</a></th>
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">Fecha
+                                            colcada</a>
+                                    </th>
+                                    <th data-sortable=""><a href="#" class="dataTable-sorter text-center">Doctor/a
+                                            encargado/a</a></th>
+                                    <th data-sortable=""><a href="#"
+                                            class="dataTable-sorter text-center">Observaciones</a></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tr align-middle" *ngFor="let data of dataChild; index as i">
+                                    <td class="td text-center">
+                                        {{data.name}}
+                                    </td>
+                                    <td class="td text-center">
+                                        {{data.vaccines[0].name}}
+                                    </td>
+                                    <td class="td text-center">
+                                        {{data.vaccines[0].doses[0].doseNumber}}
+                                    </td>
+                                    <td class="td text-center">
+                                        {{data.vaccines[0].doses[0].putWhen}}
+                                    </td>
+                                    <td class="td text-center">
+                                        {{data.vaccines[0].doses[0].healthPersonnel}}
+                                    </td>
+                                    <td class="td text-center">
+                                        {{data.vaccines[0].doses[0].observations}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

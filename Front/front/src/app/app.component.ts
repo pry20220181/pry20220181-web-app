@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from './service/auth-service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -15,27 +16,37 @@ interface NavBarToggle {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
+
+  constructor(private _service: AuthService) { }
+
   ngOnInit(): void {
-    console.log(this.modal)
+
   }
 
   isSideNavCollapsed = false;
   screenWidth = 0;
-  modal=false;
+  modal = false;
+  loged = localStorage.getItem('token')?true:false;
+
 
   onToggleSideNav(data: SideNavToggle): void {
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
   }
-  
+
   onToggleNavBar(data: NavBarToggle): void {
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
   }
 
-  changemodal(modal:boolean){
-    this.modal=!this.modal
-    console.log(this.modal)
+  changemodal(modal:boolean) {
+    this.modal = modal
+    //console.log(this.modal)
+  }
+
+  Log(log: boolean) {
+    this.loged = log
+    //console.log("LOG")
   }
 }
