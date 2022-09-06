@@ -35,7 +35,7 @@ export class ListVaccinatedViewPComponent implements OnInit {
       this.dataChild = data.value.vaccinationCard.vaccinationSchemes
     })
     setTimeout(() => {
-    this.processData()
+    this.processData() 
   }, 1500);
 
   }

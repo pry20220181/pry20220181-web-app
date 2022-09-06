@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
   }
   
   Register(){
-    this.router.navigate(['/register']);
+    this.appCom.onToggleLogin(false)
+    this.router.navigate(['/','register']);
   }
 }

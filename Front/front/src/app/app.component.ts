@@ -27,8 +27,12 @@ export class AppComponent implements OnInit {
   isSideNavCollapsed = false;
   screenWidth = 0;
   modal = false;
-  loged = localStorage.getItem('token')?true:false;
+  loged = localStorage.getItem('token') ? true : false;
+  login = true
 
+  onToggleLogin(data: boolean) {
+    this.login = data
+  }
 
   onToggleSideNav(data: SideNavToggle): void {
     this.screenWidth = data.screenWidth;
@@ -40,7 +44,7 @@ export class AppComponent implements OnInit {
     this.isSideNavCollapsed = data.collapsed;
   }
 
-  changemodal(modal:boolean) {
+  changemodal(modal: boolean) {
     this.modal = modal
     //console.log(this.modal)
   }

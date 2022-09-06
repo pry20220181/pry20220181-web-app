@@ -1,13 +1,22 @@
 <div *ngIf="loged; else elseBlockLog">
     <app-navbar [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth" (onToggleNavBar)="onToggleNavBar($event)">
     </app-navbar>
-    <app-sidenav [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth" (onToggleSideNav)="onToggleNavBar($event)">
+    <app-sidenav [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"
+        (onToggleSideNav)="onToggleNavBar($event)">
     </app-sidenav>
-    <app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth" ></app-body>
+    <app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-body>
 </div>
 
-<ng-template #elseBlockLog><app-login></app-login> </ng-template>
+<ng-template #elseBlockLog>
+    <div *ngIf="login;else elseregister">
+        <app-login></app-login>
+    </div>
+    <ng-template #elseregister>
+        <app-register></app-register>
+    </ng-template>
+</ng-template>
 
-<div *ngIf="modal; else elseBlock"><app-modal> </app-modal> </div>
+<div *ngIf="modal; else elseBlock">
+    <app-modal> </app-modal>
+</div>
 <ng-template #elseBlock></ng-template>
-

@@ -7,6 +7,7 @@ import { LandingComponent } from './component/landing/landing.component';
 import { ListPatientComponent } from './component/list-patient/list-patient.component';
 import { ListVaccinatedViewPComponent } from './component/list-vaccinated-view-p/list-vaccinated-view-p.component';
 import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';
 import { AuthGuard } from './shared/auth.guard';
 import { RoleGuardD } from './shared/role.guard';
 import { RoleGuardP } from './shared/roleP.guard';
@@ -15,6 +16,7 @@ const routes: Routes = [
 
   { path: 'landing', component: LandingComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'list', component: ListPatientComponent, canActivate: [AuthGuard, RoleGuardD], },
   { path: 'info-p', component: InfoPatientComponent, canActivate: [AuthGuard, RoleGuardD] },
   { path: 'homeD', component: HomeComponent, canActivate: [AuthGuard, RoleGuardD] },

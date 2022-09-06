@@ -18,6 +18,7 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
 import { LandingComponent } from './component/landing/landing.component';
 import { HomePComponent } from './component/home-p/home-p.component';
 import { ListVaccinatedViewPComponent } from './component/list-vaccinated-view-p/list-vaccinated-view-p.component';
+import { ParentformComponent } from './component/register/parentform/parentform.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ListVaccinatedViewPComponent } from './component/list-vaccinated-view-p
     RegisterComponent,
     LandingComponent,
     HomePComponent,
-    ListVaccinatedViewPComponent
+    ListVaccinatedViewPComponent,
+    ParentformComponent
   ],
   imports: [
     BrowserModule,
