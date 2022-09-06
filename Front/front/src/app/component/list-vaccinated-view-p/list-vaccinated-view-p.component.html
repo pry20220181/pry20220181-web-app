@@ -33,28 +33,27 @@
                                             encargado/a</a></th>
                                     <th data-sortable=""><a href="#"
                                             class="dataTable-sorter text-center">Observaciones</a></th>
-
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="tr align-middle" *ngFor="let data of dataChild; index as i">
+                                <tr class="tr align-middle" *ngFor="let data of ListShow; index as i">
                                     <td class="td text-center">
-                                        {{data.name}}
+                                        {{data.esquema}}
+                                    </td>
+                                    <td class="td text-center" >
+                                        {{data.vacunas}}
                                     </td>
                                     <td class="td text-center">
-                                        {{data.vaccines[0].name}}
+                                        {{data.dosis}}
                                     </td>
                                     <td class="td text-center">
-                                        {{data.vaccines[0].doses[0].doseNumber}}
+                                        {{data.fecha}}
                                     </td>
                                     <td class="td text-center">
-                                        {{data.vaccines[0].doses[0].putWhen}}
+                                        {{data.doctor}}
                                     </td>
                                     <td class="td text-center">
-                                        {{data.vaccines[0].doses[0].healthPersonnel}}
-                                    </td>
-                                    <td class="td text-center">
-                                        {{data.vaccines[0].doses[0].observations}}
+                                        {{data.obs}}
                                     </td>
                                 </tr>
                             </tbody>
