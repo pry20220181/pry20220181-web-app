@@ -8,23 +8,25 @@ import { Component, OnInit } from '@angular/core';
 export class ParentformComponent implements OnInit {
 
   usuario = {
-    userId: '',
-    dni: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
+    telefono: '',
+    genero: '',
+    local: '',
+    contchild: '',
   }
-
+  togglechildform=false
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
   
   Register() {
+    this.togglechildform=true
+  }
 
-    
-    }
+  convert(int:string){
+    return parseInt(int)
+  }
+
 
 }

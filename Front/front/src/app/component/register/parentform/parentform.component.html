@@ -10,36 +10,41 @@
                 <div class="row mb-3">
                     <label class="col-md-3 form-label">Telefono</label>
                     <div class="col-md-9">
-                        <input class="form-control" type="tel" placeholder="Telefono"
-                            [(ngModel)]="usuario.dni" [ngModelOptions]="{standalone: true}" />
+                        <input class="form-control" type="tel" placeholder="Telefono" pattern="[0-9]{9}"
+                            [(ngModel)]="usuario.telefono" [ngModelOptions]="{standalone: true}" />
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-md-3 form-label">Nombre</label>
-                    <div class="col-md-9">
-                        <input class="form-control" type="email" placeholder="Nombre"
-                            [(ngModel)]="usuario.firstName" [ngModelOptions]="{standalone: true}" />
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-md-3 form-label">Apellido</label>
-                    <div class="col-md-9">
-                        <input class="form-control" type="email" placeholder="Apellido"
-                            [(ngModel)]="usuario.lastName" [ngModelOptions]="{standalone: true}" />
-                    </div>
-                </div>
+                <!-- 
                 <div class="row mb-3">
                     <label class="col-md-3 form-label">Email</label>
                     <div class="col-md-9">
-                        <input class="form-control" type="email" placeholder="Email"
-                            [(ngModel)]="usuario.email" [ngModelOptions]="{standalone: true}" />
+                        <input class="form-control" type="email" placeholder="Email" [(ngModel)]="usuario.firstName"
+                            [ngModelOptions]="{standalone: true}" />
+                    </div>
+                </div> -->
+                <div class="row mb-3">
+                    <label class="col-md-3 form-label">Genero</label>
+                    <div class="col-md-9">
+                        <select class="form-select" aria-label="Default select example" [(ngModel)]="usuario.genero"
+                            [ngModelOptions]="{standalone: true}">
+                            <option value="1">Masculino</option>
+                            <option value="2">Femenino</option>
+                            <option value="3">Otro</option>
+                        </select>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-md-3 form-label">Contraseña</label>
+                    <label class="col-md-3 form-label">Localización</label>
                     <div class="col-md-9">
-                        <input class="form-control" type="password" placeholder="Contraseña"
-                            [(ngModel)]="usuario.password" [ngModelOptions]="{standalone: true}" />
+                        <input class="form-control" type="email" placeholder="Localización" [(ngModel)]="usuario.local"
+                            [ngModelOptions]="{standalone: true}" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-md-3 form-label"># de Registros de niños</label>
+                    <div class="col-md-9">
+                        <input class="form-control" type="email" placeholder="#" [(ngModel)]="usuario.contchild"
+                            [ngModelOptions]="{standalone: true}" />
                     </div>
                 </div>
                 <div class="form-group align-items-center">
@@ -60,3 +65,12 @@
                     increíblemente valiosa cuenta de ahorros</p>
             </div> -->
 </div>
+
+<div *ngIf="togglechildform; else elseRegister">
+        <span>Child {{+1}}</span>
+        <app-childform [countform]="usuario.contchild"></app-childform>
+    </div>  
+
+<ng-template #elseRegister>
+
+</ng-template>

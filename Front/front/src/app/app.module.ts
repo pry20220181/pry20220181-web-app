@@ -19,6 +19,7 @@ import { LandingComponent } from './component/landing/landing.component';
 import { HomePComponent } from './component/home-p/home-p.component';
 import { ListVaccinatedViewPComponent } from './component/list-vaccinated-view-p/list-vaccinated-view-p.component';
 import { ParentformComponent } from './component/register/parentform/parentform.component';
+import { ChildformComponent } from './component/register/childform/childform.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ParentformComponent } from './component/register/parentform/parentform.
     LandingComponent,
     HomePComponent,
     ListVaccinatedViewPComponent,
-    ParentformComponent
+    ParentformComponent,
+    ChildformComponent
   ],
   imports: [
     BrowserModule,
