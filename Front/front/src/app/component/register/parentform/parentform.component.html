@@ -1,11 +1,6 @@
 <div class="container mt-5 mb-5">
     <div class="card">
-        <!-- <div class="card-header px-lg-5">
-                        <div class="card-heading text-primary">Phukuy Dashboard</div>
-                    </div> -->
         <div class="card-body p-lg-5">
-            <!-- <h3 class="mb-4">Bienvenido de vuelta! 👋👋</h3>
-                        <p class="text-muted text-sm mb-5">Cuidar de las personas no solo es labor de los doctores.</p> -->
             <form action="form-horizontal">
                 <div class="row mb-3">
                     <label class="col-md-3 form-label">Telefono</label>
@@ -14,14 +9,6 @@
                             [(ngModel)]="usuario.telefono" [ngModelOptions]="{standalone: true}" />
                     </div>
                 </div>
-                <!-- 
-                <div class="row mb-3">
-                    <label class="col-md-3 form-label">Email</label>
-                    <div class="col-md-9">
-                        <input class="form-control" type="email" placeholder="Email" [(ngModel)]="usuario.firstName"
-                            [ngModelOptions]="{standalone: true}" />
-                    </div>
-                </div> -->
                 <div class="row mb-3">
                     <label class="col-md-3 form-label">Genero</label>
                     <div class="col-md-9">
@@ -53,23 +40,12 @@
                 </div>
             </form>
         </div>
-        <!--  <div class="card-footer px-lg-5 py-lg-4">
-            <div class="text-sm text-muted">¿No tienes una cuenta aún?<a class="LabelLink" (click)="Login()">Log In</a>.
-            </div>
-        </div> -->
     </div>
-    <!--  <div class="col-lg-6 col-xl-5 ms-xl-auto px-lg-4 text-center text-primary"><img class="img-fluid mb-4"
-                    width="300" src="img/drawkit-illustration.svg" alt="" style="transform: rotate(10deg)">
-                <h1 class="mb-4">Comienza <br class="d-none d-lg-inline">cuidando tu salud</h1>
-                <p class="lead text-muted">La salud no puede comprarse. De todos modos, sí que puede ser una
-                    increíblemente valiosa cuenta de ahorros</p>
-            </div> -->
 </div>
 
 <div *ngIf="togglechildform; else elseRegister">
-        <span>Child {{+1}}</span>
-        <app-childform [countform]="usuario.contchild"></app-childform>
-    </div>  
+    <app-childform [countform]="usuario.contchild" [parentdata]="union"></app-childform>
+</div>
 
 <ng-template #elseRegister>
 

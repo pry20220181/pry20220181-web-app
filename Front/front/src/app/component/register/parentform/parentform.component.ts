@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-parentform',
@@ -13,14 +13,20 @@ export class ParentformComponent implements OnInit {
     local: '',
     contchild: '',
   }
+
   togglechildform=false
   constructor() { }
+  @Input()
+  parentData={}
+  union:any=[]
+  
 
   ngOnInit(): void {
-
+    console.log("data",this.parentData)
   }
   
   Register() {
+    this.union.push(this.parentData,this.usuario)
     this.togglechildform=true
   }
 

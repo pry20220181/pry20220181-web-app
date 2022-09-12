@@ -10,7 +10,6 @@ import { AppComponent } from 'src/app/app.component';
 export class RegisterComponent implements OnInit {
 
   usuario = {
-    userId: '',
     dni: '',
     firstName: '',
     lastName: '',
