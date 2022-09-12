@@ -3,7 +3,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Registrar Administración de Dosis</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
           (click)="toggleleModal()"></button>
       </div>
@@ -23,20 +23,20 @@
               <div class="mb-3">
                 Centro de Salud
                 <select class="form-select" aria-label="Default select example" [(ngModel)]="healthcenter" [ngModelOptions]="{standalone: true}">
-                  <option  *ngFor="let data of ListHealthCenter; index as i" [value]="data.healthCenterId">{{data.name}}l</option>
+                  <option  *ngFor="let data of ListHealthCenter; index as i" [value]="data.healthCenterId">{{data.name}}</option>
                 </select>
               </div>
-              <div class="">
+              <!-- <div class="">
                 Fecha y Hora
                 <input type="date" name="begin" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31">
                 <input type="time" id="appt" name="appt">
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="toggleleModal()">Close</button>
-          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="RegisterModal()">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="toggleleModal()">Cancelar</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="RegisterModal()">Registrar</button>
         </div>
       </div>
     </div>
