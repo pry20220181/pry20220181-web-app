@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Ubigeo } from 'src/app/request/ubigeo';
 
 @Component({
   selector: 'app-parentform',
@@ -14,14 +15,20 @@ export class ParentformComponent implements OnInit {
     contchild: '',
   }
 
+  ubigeoData:any=[]
   togglechildform=false
-  constructor() { }
+  constructor(private ubigeo:Ubigeo,) { }
   @Input()
   parentData={}
   union:any=[]
   
 
   ngOnInit(): void {
+    console.log("Entroooo")
+    this.ubigeo.getAll().subscribe((data:any)=>{
+      this.ubigeoData=data.value.ubigeos
+      console.log("DATA",data)
+    })
     console.log("data",this.parentData)
   }
   

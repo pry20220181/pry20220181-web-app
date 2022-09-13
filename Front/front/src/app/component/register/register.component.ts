@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
+import { Register } from 'src/app/request/register-user-request';
 
 @Component({
   selector: 'app-register',
@@ -22,16 +23,20 @@ export class RegisterComponent implements OnInit {
 
 
   constructor(private appCom: AppComponent,
-    private router: Router) { }
+    private router: Router,
+    private register:Register) { }
 
   ngOnInit(): void {
   }
 
   Register() {
-    console.log(this.tipeuser)
     if (this.tipeuser === '1') {
       this.showpageP = true
     }else{
+      this.register.personnelRequest(this.usuario).subscribe(data=>{
+        console.log("DATA register",data)
+        this.router.navigate(['/', 'login']);
+      })
       this.showpageP = false
     }
   }

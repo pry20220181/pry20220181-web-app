@@ -1,22 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ubioModel } from '../models/ubigeo-model';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class Register {
+export class Ubigeo {
 
   private API = 'https://localhost:5001';
 
   constructor(private http: HttpClient) { }
 
-  parentRequest(data: any) {
-    return this.http.post(this.API + '/security/parent', data);
-  }
-
-  personnelRequest(data: any) {
-    return this.http.post(this.API + '/security/health-personnel', data);
+  getAll(): Observable<ubioModel>{
+    return this.http.get<ubioModel>(this.API + "/ubigeos");
   }
 
 }

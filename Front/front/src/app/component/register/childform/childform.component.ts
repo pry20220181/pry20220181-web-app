@@ -9,17 +9,19 @@ import { Register } from 'src/app/request/register-user-request';
 })
 export class ChildformComponent implements OnInit {
 
-  
   usuario = {
     nombre: '',
     apellido: '',
     dni: '',
     genero: '',
+    birthdate: '',
   }
-  cont=0
-  toggleShow=true
+  cont = 0
+  toggleShow = true
+  toggleregister = false
+  labelbuttom = 'Siguiente'
 
-  finalData ={
+  finalData = {
     dni: "string",
     firstName: "string",
     lastName: "string",
@@ -33,55 +35,73 @@ export class ChildformComponent implements OnInit {
         dni: "string",
         firstName: "string",
         lastName: "string",
-        birthdate: "2022-09-12T04:18:35.828Z",
+        birthdate: "new Date",
         gender: "string"
       }
     ]
   }
-
-  @Input()
-  countform="";
-  @Input()
-  parentdata:any=[]
-
-  constructor(private route:Router,
-    private register:Register) { }
-
-  ngOnInit(): void {
-    console.log("child compo",this.parentdata)
+  childData = {
+    dni: "string",
+    firstName: "string",
+    lastName: "string",
+    birthdate: "new Date",
+    gender: "string"
   }
 
-  Register(){
+  @Input()
+  countform = "";
+  @Input()
+  parentdata: any = []
+
+  constructor(private route: Router,
+    private register: Register) { }
+
+  ngOnInit(): void {
+
+    console.log("child compo", this.parentdata)
+    this.finalData.children.pop()
+    this.chargedataParent()
+  }
+
+  chargedataParent() {
+    this.finalData.dni = this.parentdata[0].dni
+    this.finalData.firstName = this.parentdata[0].firstName
+    this.finalData.lastName = this.parentdata[0].lastName
+    this.finalData.password = this.parentdata[0].password
+    this.finalData.email = this.parentdata[0].email
+
+    this.finalData.telephone = this.parentdata[1].telefono
+    this.finalData.ubigeoId = 0 //ubigeoiD
+    this.finalData.relationship = "Father"
+  }
+    
+
+
+  Siguiente() {
+    this.childData.dni=this.usuario.dni
+    this.childData.firstName=this.usuario.nombre
+    this.childData.lastName=this.usuario.apellido
+    this.childData.birthdate=new Date(this.usuario.birthdate).toISOString()
+    this.childData.gender=this.usuario.genero
+
+    this.finalData.children.push(this.childData)
+
     this.cont++
 
-    this.finalData.dni=this.parentdata[0].dni
-    this.finalData.firstName=this.parentdata[0].firstName
-    this.finalData.lastName=this.parentdata[0].lastName
-    this.finalData.password=this.parentdata[0].password
-    this.finalData.email=this.parentdata[0].email
+    if (this.cont+1 === parseInt(this.countform)) {
+      this.labelbuttom = 'Registrar'
+    }
 
-    this.finalData.telephone=this.parentdata[1].telefono
-    this.finalData.ubigeoId=0 //ubigeoiD
-    this.finalData.relationship="relationship"
-    this.finalData.email=this.parentdata[1].email
-
-    this.finalData.children[0].dni=this.usuario.dni
-    this.finalData.children[0].firstName=this.usuario.nombre
-    this.finalData.children[0].lastName=this.usuario.apellido
-    this.finalData.children[0].birthdate="2022"
-    this.finalData.children[0].gender=this.usuario.genero
-
-    console.log("data final",this.finalData)
-    this.register.parentRequest(this.finalData).subscribe(result=>{
-      if (result != null){
-        console.log(result)
-      }
-    })
-
-    if (this.cont===parseInt(this.countform)) {
-      this.toggleShow=false
-      this.route.navigate(['/', 'login']);
-      location.reload()
+    if (this.cont === parseInt(this.countform)) {
+      console.log("data final", this.finalData)
+      this.register.parentRequest(this.finalData).subscribe(result => {
+        if (result != null) {
+          console.log(result)
+        }
+          this.toggleShow=false
+          this.route.navigate(['/', 'login']);
+          location.reload()
+      })
     }
 
   }

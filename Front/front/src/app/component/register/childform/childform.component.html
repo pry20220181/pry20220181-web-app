@@ -6,6 +6,13 @@
                     <label class="child_text col-md-3 form-label">Child # {{cont+1}}</label>
                 </div>
                 <div class="row mb-3">
+                    <label class="col-md-3 form-label">DNI</label>
+                    <div class="col-md-9">
+                        <input class="form-control" type="tel" placeholder="DNI" pattern="[0-9]{9}"
+                            [(ngModel)]="usuario.dni" [ngModelOptions]="{standalone: true}" />
+                    </div>
+                </div>
+                <div class="row mb-3">
                     <label class="col-md-3 form-label">Nombres</label>
                     <div class="col-md-9">
                         <input class="form-control" type="tel" placeholder="Nombres" pattern="[0-9]{9}"
@@ -20,6 +27,13 @@
                     </div>
                 </div>
                 <div class="row mb-3">
+                    <label class="col-md-3 form-label">Fecha de Nacimiento</label>
+                    <div class="col-md-9">
+                        <input class="form-control" type="date" placeholder="Apellidos" [(ngModel)]="usuario.birthdate"
+                            [ngModelOptions]="{standalone: true}" />
+                    </div>
+                </div>
+                <div class="row mb-3">
                     <label class="col-md-3 form-label">Genero</label>
                     <div class="col-md-9">
                         <select class="form-select" aria-label="Default select example" [(ngModel)]="usuario.genero"
@@ -30,16 +44,11 @@
                         </select>
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-md-3 form-label">Localización</label>
-                    <div class="col-md-9">
-                        <input class="form-control" type="email" placeholder="Localización" [(ngModel)]="usuario.dni"
-                            [ngModelOptions]="{standalone: true}" />
+                <div >
+                    <div class="form-group align-items-center" >
+                        <button class="btn btn-primary" id="regidter" type="submit" (click)="Siguiente()"
+                            name="registerSubmit">{{labelbuttom}}</button>
                     </div>
-                </div>
-                <div class="form-group align-items-center">
-                    <button class="btn btn-primary" id="regidter" type="submit" (click)="Register()"
-                        name="registerSubmit">Registrar</button>
                 </div>
             </form>
         </div>
