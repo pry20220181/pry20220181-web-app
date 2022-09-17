@@ -8,7 +8,8 @@
                 <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
                     <div class="dataTable-top">
                         <div class="dataTable-search">
-                            <select class="form-select" aria-label="Default select example" [(ngModel)]="childId"
+                            <label style="margin-bottom: 1em;">Seleccione un Hijo/a: </label>
+                            <select class="form-select" style="margin-bottom: 1em;" aria-label="Default select example" [(ngModel)]="childId"
                                 [ngModelOptions]="{standalone: true}" (click)="viewdata()">
                                 <option *ngFor="let data of ListChild; index as i" [value]="data.childId">
                                     {{data.firstname}}</option>
