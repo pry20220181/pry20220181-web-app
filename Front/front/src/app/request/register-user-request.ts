@@ -13,7 +13,7 @@ export class Register {
   constructor(private http: HttpClient) { }
 
   parentRequest(data: any) {
-    return this.http.post(this.API + '/security/parent', data);
+    return this.http.post(this.API + 'security/parent', data);
   }
 
 }

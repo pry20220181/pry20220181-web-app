@@ -22,15 +22,15 @@ export class VaccinationRquest {
   }
 
   getVaRe(id: number): Observable<VaccinationRe> {
-    return this.http.get<VaccinationRe>(this.API + "/vaccination/remaining-doses?childId=" + id);
+    return this.http.get<VaccinationRe>(this.API + "vaccination/remaining-doses?childId=" + id);
   }
 
   getVaAd(id: number): Observable<VaccinationAd> {
-    return this.http.get<VaccinationAd>(this.API + '/vaccination/administered-doses?childId=' + id)
+    return this.http.get<VaccinationAd>(this.API + 'vaccination/administered-doses?childId=' + id)
   }
 
   postVa(data: any) {
-    return this.http.post(this.API + '/vaccination/administered-doses', data)
+    return this.http.post(this.API + 'vaccination/administered-doses', data)
       .pipe(
         tap(() => {
           this._refresh$.next();
@@ -39,7 +39,7 @@ export class VaccinationRquest {
   }
 
   getinfoChildById(id:number): Observable<VaccinationAd> {
-    return this.http.get<VaccinationAd>(this.API + '/children/'+ id + '/vaccination-card')
+    return this.http.get<VaccinationAd>(this.API + 'children/'+ id + '/vaccination-card')
   }
 
 }

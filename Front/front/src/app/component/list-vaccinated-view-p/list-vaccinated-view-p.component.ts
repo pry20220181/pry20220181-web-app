@@ -50,7 +50,16 @@ export class ListVaccinatedViewPComponent implements OnInit {
           const doses = vaccines.doses[k]
           console.log(scheme.name, ' + ',vaccines.name,' + ')
           //this.ListShow.push(scheme.name,vaccines.name,doses.doseId,doses.putWhen,doses.healthPersonnel,doses.observations)
-          this.ListShow.push({esquema:scheme.name,vacunas:vaccines.name,dosis:doses.doseNumber,fecha:doses.administrationDate,doctor:doses.healthPersonnel.fullname,obs:doses.observations})
+
+          let administrationDate = doses.administrationDate;
+          if (administrationDate === null){
+            administrationDate = "-"
+          }
+          else{
+            administrationDate = `${administrationDate.substring(11,16)} ${administrationDate.substring(8,10)}-${administrationDate.substring(5,7)}-${administrationDate.substring(0,4)}`
+          }
+          
+          this.ListShow.push({esquema:scheme.name,vacunas:vaccines.name,dosis:doses.doseNumber,fecha: administrationDate,doctor:doses.healthPersonnel?.fullname ?? "-",obs:doses.observations})
         }
       }
     }

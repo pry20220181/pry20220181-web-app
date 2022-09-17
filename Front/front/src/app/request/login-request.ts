@@ -13,7 +13,7 @@ export class LoginRequest {
   constructor(private http: HttpClient) { }
 
   proceedLogin(data: any) {
-    return this.http.post(this.API + '/security/authenticate', data);
+    return this.http.post(this.API + 'security/authenticate', data);
   }
 
 }
