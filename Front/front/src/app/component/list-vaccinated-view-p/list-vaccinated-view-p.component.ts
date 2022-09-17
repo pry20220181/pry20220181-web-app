@@ -50,7 +50,7 @@ export class ListVaccinatedViewPComponent implements OnInit {
           const doses = vaccines.doses[k]
           console.log(scheme.name, ' + ',vaccines.name,' + ')
           //this.ListShow.push(scheme.name,vaccines.name,doses.doseId,doses.putWhen,doses.healthPersonnel,doses.observations)
-          this.ListShow.push({esquema:scheme.name,vacunas:vaccines.name,dosis:doses.doseId,fecha:doses.putWhen,doctor:doses.healthPersonnel,obs:doses.observations})
+          this.ListShow.push({esquema:scheme.name,vacunas:vaccines.name,dosis:doses.doseNumber,fecha:doses.administrationDate,doctor:doses.healthPersonnel.fullname,obs:doses.observations})
         }
       }
     }
