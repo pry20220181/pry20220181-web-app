@@ -1,6 +1,6 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
     <div class="logo-container text-center" *ngIf="collapsed">
-        <img class="img img-fluid mb-4" width="500" src="assets/img/logo.jpg" alt="idk">
+        <img class="img img-fluid mb-4" width="250" height="100" src="assets/img/logo.png" alt="idk">
     </div>
     <ul class="sidenav-nav" *ngIf="collapsed">
         <li class="sidenav-nav-item" *ngFor="let data of navData" (click)="ValidateLogOut(data.routeLink)" (click)="toggleCollapse()">

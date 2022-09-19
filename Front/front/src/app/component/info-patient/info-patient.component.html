@@ -12,9 +12,13 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">DNI: {{ListPrint.dni}}</li>
                   <li class="list-group-item">Edad: {{ListPrint.age}}</li>
-                  <li class="list-group-item">Cumpleaños: {{ListPrint.birthdate}}</li>
-                  <li class="list-group-item">Nombre: {{ListPrint.firstname}}</li>
-                  <li class="list-group-item">Genero: {{ListPrint.lastname}}</li>
+                  <li class="list-group-item">Nombres: {{ListPrint.firstname}}</li>
+                  <li class="list-group-item">Apellidos: {{ListPrint.lastname}}</li>
+                
+                  <li class="list-group-item" *ngIf="ListPrint.gender == 'M'; else genderElseBlock">Genero: Masculino</li>
+                  <ng-template #genderElseBlock>
+                    <li class="list-group-item">Genero: Femenino</li>
+                </ng-template>
                 </ul>
               </div>
               <div class="row text-center">
@@ -41,7 +45,7 @@
                             {{data.doseNumber}}
                           </td>
                           <td>
-                            {{data.administrationDate}}
+                            {{data.administrationDate.substring(11,16)}} {{data.administrationDate.substring(8,10)}}-{{data.administrationDate.substring(5,7)}}-{{data.administrationDate.substring(0,4)}}
                           </td>
                           <td>
                             {{data.healthPersonnelName}}

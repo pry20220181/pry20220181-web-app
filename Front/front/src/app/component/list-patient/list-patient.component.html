@@ -39,9 +39,13 @@
                                     <td class="td text-center">
                                         {{data.age}}
                                     </td>
-                                    <td class="td text-center">
-                                        {{data.gender}}
+                                    <td class="td text-center" *ngIf="data.gender == 'M'; else genderElseBlock">
+                                        MASCULINO
                                     </td>
+                                    <ng-template #genderElseBlock><td class="td text-center">
+                                        FEMENINO
+                                    </td></ng-template>
+                                    
                                     <td class="bteye" (click)="routeInfoP(data.dni,data.childId)"> <i class="eye fa fa-eye" style="width: 100%;text-align: center"
                                             aria-hidden="true"></i>
                                     </td>

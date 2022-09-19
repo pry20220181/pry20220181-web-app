@@ -58,7 +58,7 @@ export class ListVaccinatedViewPComponent implements OnInit {
     }
   }
   RedirectVac(id:number){
-    
+
 
     this.router.navigate(["/","detail-vac-p"])
   }
