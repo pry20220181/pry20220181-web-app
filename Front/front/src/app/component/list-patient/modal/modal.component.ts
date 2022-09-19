@@ -47,7 +47,7 @@ export class ModalComponent implements OnInit {
 
   }
   toggleleModal() {
-    this.appComp.changemodal(false)
+    this.appComp.changemodalInfo(false)
   }
 
   RegisterModal(){
@@ -62,6 +62,6 @@ export class ModalComponent implements OnInit {
       }
     })
 
-    this.appComp.changemodal(false)
+    this.appComp.changemodalInfo(false)
   }
 }

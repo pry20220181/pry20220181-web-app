@@ -20,6 +20,10 @@ import { HomePComponent } from './component/home-p/home-p.component';
 import { ListVaccinatedViewPComponent } from './component/list-vaccinated-view-p/list-vaccinated-view-p.component';
 import { ParentformComponent } from './component/register/parentform/parentform.component';
 import { ChildformComponent } from './component/register/childform/childform.component';
+import { CampeinVacComponent } from './component/campein-vac/campein-vac.component';
+import { ModalCampComponent } from './component/campein-vac/modal-camp/modal-camp.component';
+import { CitaParentComponent } from './component/cita-parent/cita-parent.component';
+import { DetailVacParentComponent } from './component/detail-vac-parent/detail-vac-parent.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { ChildformComponent } from './component/register/childform/childform.com
     HomePComponent,
     ListVaccinatedViewPComponent,
     ParentformComponent,
-    ChildformComponent
+    ChildformComponent,
+    CampeinVacComponent,
+    ModalCampComponent,
+    CitaParentComponent,
+    DetailVacParentComponent
   ],
   imports: [
     BrowserModule,

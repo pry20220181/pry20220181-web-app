@@ -1,0 +1,42 @@
+<div class="container mt-5 mb-5">
+    <div class="card">
+        <div class="card-body p-lg-5">
+            <form action="form-horizontal">
+                <div class="row mb-3">
+                    <label for="formGroupExampleInput">Fecha </label>
+                    <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Nombre Campaña"
+                        [(ngModel)]="finalData.appointmentDateTime" [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="row mb-3">
+                    <label class="col-md-3 form-label">Vacuna</label>
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="valVaccinId"
+                        [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let data of listVaccines; index as i" [value]="data.id">{{data.name}}</option>
+                    </select>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-md-3 form-label">Lugar</label>
+                    <select class="form-select" aria-label="Default select example"
+                        [(ngModel)]="finalData.healthCenterId" [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let data of listUbigeo; index as i" [value]="data.ubigeoId">{{data.district}}
+                        </option>
+                    </select>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-md-3 form-label">Niño</label>
+                    <select class="form-select" aria-label="Default select example" [(ngModel)]="finalData.childId"
+                        [ngModelOptions]="{standalone: true}">
+                        <option *ngFor="let data of listChilds; index as i" [value]="data.childId">{{data.firstname}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group align-items-center">
+                    <button class="btn btn-primary" id="regidter" type="submit" (click)="Register()"
+                        name="registerSubmit">Registrar</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

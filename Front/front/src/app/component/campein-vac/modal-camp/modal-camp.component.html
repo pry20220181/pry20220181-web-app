@@ -1,0 +1,86 @@
+<!-- Modal -->
+<div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registrar Administración de Dosis</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="toggleleModal()"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col">
+                            <form>
+                                <div class="name">
+                                    <label for="formGroupExampleInput">Nombre Campaña</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput"
+                                        placeholder="Nombre Campaña" [(ngModel)]="finalData.name"
+                                        [ngModelOptions]="{standalone: true}">
+                                </div>
+                                <div class="des">
+                                    <label for="formGroupExampleInput2">Descripcion</label>
+                                    <textarea class="form-control" aria-label="With textarea" [(ngModel)]="finalData.description"
+                                    [ngModelOptions]="{standalone: true}"
+                                    ></textarea>
+                                </div>
+                                <div class="place-campein">
+                                    <label for="formGroupExampleInput2">Lugar de Campaña</label>
+                                    <div class="form-check" *ngFor="let data of listUbigeo; let i = index">
+                                        <input class="form-check-input" type="checkbox" value="0" id="defaultCheck1"
+                                            (change)="selected()" [(ngModel)]="!data.ubigeoCode"
+                                            [ngModelOptions]="{standalone: true}">
+                                        <label class="form-check-label" for="defaultCheck1">
+                                            {{data.district}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <form>
+                                    <div class="place-campein">
+                                        <label for="formGroupExampleInput2">Nombre de Vacuna</label>
+                                        <div class="form-check" *ngFor="let data of listVaccines; let i = index">
+                                            <input class="form-check-input" type="checkbox" value="0" id="defaultCheck1"
+                                                (change)="selected()" [(ngModel)]="!data.description"
+                                                [ngModelOptions]="{standalone: true}">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                                {{data.name}}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="name">
+                                        <label for="formGroupExampleInput">Fecha Inicio</label>
+                                        <input type="date" class="form-control" id="formGroupExampleInput"
+                                            placeholder="Nombre Campaña"  [(ngModel)]="finalData.startDateTime"
+                                            [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                    <div class="name">
+                                        <label for="formGroupExampleInput">Fecha Final</label>
+                                        <input type="date" class="form-control" id="formGroupExampleInput"
+                                            placeholder="Nombre Campaña" [(ngModel)]="finalData.endDateTime"
+                                            [ngModelOptions]="{standalone: true}">
+                                    </div>
+                                    <div>
+                                        <div class="input-group mb-3">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile02" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        (click)="toggleleModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                        (click)="RegisterModal()">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div>

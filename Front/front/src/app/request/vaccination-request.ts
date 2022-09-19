@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { VaccinationAd } from '../models/Vaccination-Ad-model';
 import { VaccinationRe } from '../models/Vaccination-Re-model';
 import { tap } from 'rxjs/operators';
+import { Vaccination } from '../models/vaccination-model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,9 +37,16 @@ export class VaccinationRquest {
         })
       )
   }
+  getAll(): Observable<Vaccination> {
+    return this.http.get<Vaccination>(this.API + "/vaccines?fields=all");
+  }
 
   getinfoChildById(id:number): Observable<VaccinationAd> {
     return this.http.get<VaccinationAd>(this.API + '/children/'+ id + '/vaccination-card')
+  }
+
+  postVacciAppo(data:any){
+    return this.http.post(this.API + '/vaccination/appointments', data);
   }
 
 }

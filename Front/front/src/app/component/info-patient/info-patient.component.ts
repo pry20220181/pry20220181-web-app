@@ -63,7 +63,7 @@ export class InfoPatientComponent implements OnInit, OnDestroy {
   toggleleModal(id: number) {
     //console.log("IDDD",id)
     this._service.setIdRegister(id)
-    this.appComp.changemodal(true)
+    this.appComp.changemodalInfo(true)
   }
 
 }

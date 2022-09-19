@@ -16,7 +16,14 @@
     </ng-template>
 </ng-template>
 
-<div *ngIf="modal; else elseBlock">
+
+<div *ngIf="modalinf; else elseBlock">
     <app-modal> </app-modal>
+</div>
+<ng-template #elseBlock></ng-template>
+
+
+<div *ngIf="modalcamp; else elseBlock">
+    <app-modal-camp></app-modal-camp>
 </div>
 <ng-template #elseBlock></ng-template>

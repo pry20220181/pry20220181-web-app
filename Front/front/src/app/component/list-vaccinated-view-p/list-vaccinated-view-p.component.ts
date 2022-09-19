@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
 import { VaccinationAd } from 'src/app/models/Vaccination-Ad-model';
 import { ChildrenRquest } from 'src/app/request/children-request';
 import { VaccinationRquest } from 'src/app/request/vaccination-request';
@@ -11,7 +12,8 @@ import { VaccinationRquest } from 'src/app/request/vaccination-request';
 export class ListVaccinatedViewPComponent implements OnInit {
 
   constructor(private ChildrenR: ChildrenRquest,
-    private vaccineR: VaccinationRquest) { }
+    private vaccineR: VaccinationRquest,
+    private router:Router) { }
 
   ListChild: any[] = []
   childId: any
@@ -33,6 +35,7 @@ export class ListVaccinatedViewPComponent implements OnInit {
   viewdata() {
     this.vaccineR.getinfoChildById(this.childId).subscribe((data: any) => {
       this.dataChild = data.value.vaccinationCard.vaccinationSchemes
+      console.log("Dta", data)
     })
     setTimeout(() => {
     this.processData() 
@@ -48,13 +51,16 @@ export class ListVaccinatedViewPComponent implements OnInit {
         const vaccines = scheme.vaccines[j]
         for (var k = 0; k < vaccines.doses.length;k++) {
           const doses = vaccines.doses[k]
-          console.log(scheme.name, ' + ',vaccines.name,' + ')
           //this.ListShow.push(scheme.name,vaccines.name,doses.doseId,doses.putWhen,doses.healthPersonnel,doses.observations)
-          this.ListShow.push({esquema:scheme.name,vacunas:vaccines.name,dosis:doses.doseId,fecha:doses.putWhen,doctor:doses.healthPersonnel,obs:doses.observations})
+          this.ListShow.push({esquema:scheme.name,vacunaid:vaccines.vaccinesId,vacunas:vaccines.name,dosis:doses.doseId,fecha:doses.putWhen,doctor:doses.healthPersonnel,obs:doses.observations})
         }
       }
     }
-    //console.log("datashow",this.ListShow)
+  }
+  RedirectVac(id:number){
+    
+
+    this.router.navigate(["/","detail-vac-p"])
   }
 
 }

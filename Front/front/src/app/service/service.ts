@@ -13,6 +13,8 @@ export class Service {
     idChild:number=0
     idModal:number=0
     rol:string=''
+    idParent=0
+    vacId=0
 
     constructor(){}
 
@@ -47,6 +49,24 @@ export class Service {
     setRol(rol:string){
         this.rol=rol
     }
+
+    getIdP(){
+        return this.idParent
+    }
+
+    setIdP(idParent:number){
+        this.idParent=idParent
+    }
+
+    getvacId(){
+        return this.vacId
+    }
+
+    setvacId(vacId:number){
+        this.vacId=vacId
+    }
+
+
 
 
 }

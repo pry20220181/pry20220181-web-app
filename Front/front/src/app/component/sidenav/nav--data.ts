@@ -10,7 +10,7 @@ export const navbarDataDoctor = [
         label: 'Vacunación'
     },
     {
-        routeLink:'spirometry',
+        routeLink:'campein-vac',
         icon: 'fal fa-solid fa-shoe-prints',
         label: 'Campañas'
     },
@@ -41,6 +41,11 @@ export const navbarDataParents = [
         routeLink:'list-va-vp',
         icon: 'fal fa-solid fa-syringe',
         label: 'Vacunación'
+    }, 
+    {
+        routeLink:'citas-p',
+        icon: 'fal fa-solid fa-user-plus',
+        label: 'Citas'
     },
      {
         routeLink:'login',

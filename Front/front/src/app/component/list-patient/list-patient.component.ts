@@ -47,7 +47,7 @@ export class ListPatientComponent implements OnInit {
   }
 
   toggleleModal(){
-    this.appComp.changemodal(false)
+    this.appComp.changemodalInfo(false)
     //console.log("entro")
   }
   

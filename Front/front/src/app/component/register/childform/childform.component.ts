@@ -16,6 +16,7 @@ export class ChildformComponent implements OnInit {
     genero: '',
     birthdate: '',
   }
+  countChild=0
   cont = 0
   toggleShow = true
   toggleregister = false
@@ -40,13 +41,13 @@ export class ChildformComponent implements OnInit {
       }
     ]
   }
-  childData = {
-    dni: "string",
+  childData = [{
+    dni: '',
     firstName: "string",
     lastName: "string",
     birthdate: "new Date",
     gender: "string"
-  }
+  }]
 
   @Input()
   countform = "";
@@ -78,14 +79,10 @@ export class ChildformComponent implements OnInit {
 
 
   Siguiente() {
-    this.childData.dni=this.usuario.dni
-    this.childData.firstName=this.usuario.nombre
-    this.childData.lastName=this.usuario.apellido
-    this.childData.birthdate=new Date(this.usuario.birthdate).toISOString()
-    this.childData.gender=this.usuario.genero
+    this.cont===0?this.childData.pop():null
+    this.childData.push({dni:this.usuario.dni,firstName:this.usuario.nombre,lastName:this.usuario.apellido,birthdate:new Date(this.usuario.birthdate).toISOString(),gender:this.usuario.genero})
 
-    this.finalData.children.push(this.childData)
-
+    this.finalData.children=this.childData
     this.cont++
 
     if (this.cont+1 === parseInt(this.countform)) {

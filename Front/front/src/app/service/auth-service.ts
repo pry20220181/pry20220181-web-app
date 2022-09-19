@@ -41,8 +41,9 @@ export class AuthService {
         var loggintoken = localStorage.getItem('token') || '';
         var _extractedtoken = loggintoken.split('.')[1];
         var _astobdata = atob(_extractedtoken);
-        //console.log("_astobdata",_astobdata)
+        console.log("_astobdata",_astobdata)
         var _finaldata = _astobdata.split('"')[15]
+        this._service.setIdP(parseInt(_astobdata.split('"')[19]))
         console.log("_finaldata patient",_finaldata)
         if (_finaldata === 'Parent') {
         this._service.setRol(_finaldata)
