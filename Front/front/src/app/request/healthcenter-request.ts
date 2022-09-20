@@ -9,13 +9,13 @@ import { HealthPersonnel } from '../models/HealthPersonnel-model';
 
   export class HealthCenterRequest{
     
-  private API = 'https://localhost:5001/';
-  //private API = 'http://localhost:5000/';
+  private API = 'https://localhost:5001';
+  //private API = 'http://localhost:5000';
 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<HealthPersonnel>{
-    return this.http.get<HealthPersonnel>(this.API + "health-centers");
+    return this.http.get<HealthPersonnel>(this.API + "/health-centers");
   }
 
   }

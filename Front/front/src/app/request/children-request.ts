@@ -9,20 +9,20 @@ import { Children } from '../models/Children-model';
 
   export class ChildrenRquest{
     
-    private API = 'https://localhost:5001/';
-    //private API = 'http://localhost:5000/';
+    private API = 'https://localhost:5001';
+    //private API = 'http://localhost:5000';
 
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Children>{
-    return this.http.get<Children>(this.API + "children");
+    return this.http.get<Children>(this.API + "/children");
   }
   getByDNI(id:number): Observable<Children>{
-    return this.http.get<Children>(this.API + "children?dni=" + id);
+    return this.http.get<Children>(this.API + "/children?dni=" + id);
   }
 
   getbyParent(): Observable<Children>{
-    return this.http.get<Children>(this.API+"parents/children")
+    return this.http.get<Children>(this.API+"/parents/children")
   }
 
   }
