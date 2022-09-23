@@ -4,11 +4,10 @@
       <div [attr.class]="data.index === 0 ? 'carousel-item active' : 'carousel-item'" *ngFor="let data of List">
         {{data.reminderId}} - X
         <div class="card" style="width: 18rem; left: 40%;">
-            <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">Recordatorio de Vacuna</h5>
+              <p class="card-text"> recuerda que tu hijo/a {{data.childName}}
+                debe recibir la dosis numero {{data.doseNumber}} de la vacuna {{data.vaccineName}}</p>
             </div>
           </div>
       </div>
