@@ -9,7 +9,8 @@ import { Service } from 'src/app/service/service';
 })
 export class HomePComponent implements OnInit {
 
-  List=[{via:'asd'},{via:'aq'}]
+  // List=[{via:'asd'},{via:'aq'}]
+  List:any[]=[]
 
   dateTime = new Date()
 
@@ -22,8 +23,22 @@ export class HomePComponent implements OnInit {
   }
 
   getDoses() {
-    this.reminder.getDoses(this._servie.getIdP(), this.dateTime.getFullYear()+"-"+this.dateTime.getMonth()+"-"+this.dateTime.getDate()).subscribe(reult => {
-      console.log(reult)
+    this.reminder.getDoses(this._servie.getIdP(), this.dateTime.getFullYear()+"-"+this.dateTime.getMonth()+"-"+this.dateTime.getDate()).subscribe((result: any) => {
+      console.log(result.value.dosesReminders)
+      let doseReminders = result.value.dosesReminders
+      for (let i = 0; i < doseReminders.length; i++) {
+        const element = doseReminders[i];
+        this.List.push({
+          index: i,
+          reminderId: element.reminderId
+        })
+      }
+      
+      /*
+      Hola {parent.firstname}, 
+      recuerda que tu hijo/a {child.name} 
+      debe recibir la dosis numero {dose.doseNumber} de la vacuna {dose.vaccineName}
+      */
     })
   }
 

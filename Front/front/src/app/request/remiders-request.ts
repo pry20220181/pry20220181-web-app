@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ubioModel } from '../models/ubigeo-model';
+import { DoseReminder } from '../models/Dose-Reminder-Model';
 
 @Injectable({
     providedIn: 'root'
@@ -13,8 +13,8 @@ export class Reminders {
 
     constructor(private http: HttpClient) { }
 
-    getDoses(parentid: number, date: string): Observable<ubioModel> {
-        return this.http.get<ubioModel>(this.API + "/reminders/doses?parentId=" + parentid + "&sendDate=" + date);
+    getDoses(parentid: number, date: string): Observable<DoseReminder> {
+        return this.http.get<DoseReminder>(this.API + "/reminders/doses?parentId=" + parentid + "&sendDate=" + date);
     }
 
 }

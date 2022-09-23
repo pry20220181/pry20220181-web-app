@@ -1,8 +1,8 @@
 <div class="page">
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" *ngFor="let data of List">
-        {{data.via}}
+      <div [attr.class]="data.index === 0 ? 'carousel-item active' : 'carousel-item'" *ngFor="let data of List">
+        {{data.reminderId}} - X
         <div class="card" style="width: 18rem; left: 40%;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
