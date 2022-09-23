@@ -30,14 +30,15 @@ export class HomePComponent implements OnInit {
         const element = doseReminders[i];
         this.List.push({
           index: i,
-          reminderId: element.reminderId
+          reminderId: element.reminderId,
+          childName: element.child.name,
+          doseNumber: element.dose.doseNumber,
+          vaccineName: element.dose.vaccineName
         })
       }
       
       /*
-      Hola {parent.firstname}, 
-      recuerda que tu hijo/a {child.name} 
-      debe recibir la dosis numero {dose.doseNumber} de la vacuna {dose.vaccineName}
+      
       */
     })
   }
