@@ -1,7 +1,7 @@
 <!-- Modal -->
-<div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+<div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false" >
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="width: 900px;">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Registrar Campaña de Vacunación</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
@@ -25,7 +25,7 @@
                                     ></textarea>
                                 </div>
                                 <div class="place-campein">
-                                    <label for="formGroupExampleInput2">Lugar de Campaña</label>
+                                    <label for="formGroupExampleInput2">Lugares</label>
                                     <div class="form-check" *ngFor="let data of listUbigeo; let i = index">
                                         <input class="form-check-input" type="checkbox" value="0" id="defaultCheck1"
                                             (change)="selected()" [(ngModel)]="!data.ubigeoCode"
@@ -41,7 +41,7 @@
                             <div class="mb-3">
                                 <form>
                                     <div class="place-campein">
-                                        <label for="formGroupExampleInput2">Nombre de Vacuna</label>
+                                        <label for="formGroupExampleInput2">Vacunas a poner</label>
                                         <div class="form-check" *ngFor="let data of listVaccines; let i = index">
                                             <input class="form-check-input" type="checkbox" value="0" id="defaultCheck1"
                                                 (change)="selected()" [(ngModel)]="!data.description"
@@ -58,7 +58,7 @@
                                             [ngModelOptions]="{standalone: true}">
                                     </div>
                                     <div class="name">
-                                        <label for="formGroupExampleInput">Fecha Final</label>
+                                        <label for="formGroupExampleInput">Fecha Fin</label>
                                         <input type="date" class="form-control" id="formGroupExampleInput"
                                             placeholder="Nombre Campaña" [(ngModel)]="finalData.endDateTime"
                                             [ngModelOptions]="{standalone: true}">
@@ -66,6 +66,7 @@
                                     <div>
                                         <div class="input-group mb-3">
                                             <div class="custom-file">
+                                                <label for="formGroupExampleInput" style="margin-right: 1em;">Imagen:</label>
                                                 <input type="file" class="custom-file-input" id="inputGroupFile02" >
                                             </div>
                                         </div>
