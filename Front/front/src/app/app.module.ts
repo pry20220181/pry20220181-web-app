@@ -24,6 +24,7 @@ import { CampeinVacComponent } from './component/campein-vac/campein-vac.compone
 import { ModalCampComponent } from './component/campein-vac/modal-camp/modal-camp.component';
 import { CitaParentComponent } from './component/cita-parent/cita-parent.component';
 import { DetailVacParentComponent } from './component/detail-vac-parent/detail-vac-parent.component';
+import { VaccInventoryComponent } from './component/vacc-inventory/vacc-inventory.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DetailVacParentComponent } from './component/detail-vac-parent/detail-v
     CampeinVacComponent,
     ModalCampComponent,
     CitaParentComponent,
-    DetailVacParentComponent
+    DetailVacParentComponent,
+    VaccInventoryComponent
   ],
   imports: [
     BrowserModule,
