@@ -23,7 +23,6 @@
                 <div class="row mb-3">
                     <label class="col-md-3 form-label">Localización</label>
                     <div class="col-md-9">
-                        Centro de Salud
                         <select class="form-select" aria-label="Default select example" [(ngModel)]="usuario.local"
                             [ngModelOptions]="{standalone: true}">
                             <option *ngFor="let data of ubigeoData; index as i" [value]="data.ubigeoId">{{data.region}}
