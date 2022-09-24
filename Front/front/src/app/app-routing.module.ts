@@ -14,21 +14,24 @@ import { AuthGuard } from './shared/auth.guard';
 import { RoleGuardD } from './shared/role.guard';
 import { RoleGuardP } from './shared/roleP.guard';
 import { DetailVacParentComponent } from './component/detail-vac-parent/detail-vac-parent.component';
+import { VaccInventoryComponent } from './component/vacc-inventory/vacc-inventory.component';
+
 
 const routes: Routes = [
-
   { path: 'landing', component: LandingComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'list', component: ListPatientComponent, canActivate: [AuthGuard, RoleGuardD], },
   { path: 'info-p', component: InfoPatientComponent, canActivate: [AuthGuard, RoleGuardD] },
-  { path: 'homeD', component: HomeComponent, canActivate: [AuthGuard, RoleGuardD] },
+  { path: 'homeD', component: HomeComponent, canActivate: [AuthGuard, ] },
   { path: 'homeP', component: HomePComponent, canActivate: [AuthGuard, RoleGuardP] },
   { path: 'list-va-vp', component: ListVaccinatedViewPComponent, canActivate: [AuthGuard, RoleGuardP] },
   { path: 'campein-vac', component: CampeinVacComponent, canActivate: [AuthGuard, RoleGuardD] },
   { path: 'citas-p', component: CitaParentComponent, canActivate: [AuthGuard, RoleGuardP] },
   { path: 'detail-vac-p', component: DetailVacParentComponent, canActivate: [AuthGuard, RoleGuardP] },
+  { path: 'vacc-invent', component: VaccInventoryComponent, canActivate: [AuthGuard, RoleGuardD] },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
