@@ -65,7 +65,15 @@ export class CitaParentComponent implements OnInit {
 
 
     this.vacc.postVacciAppo(this.finalData).subscribe(reuslt => {
+      this.finalData = {
+        healthCenterId: 0,
+        parentId: 0,
+        childId: 0,
+        appointmentDateTime: '',
+        vaccinesIds: []
+      }
       console.log(reuslt)
+      alert("Cita agendada.")
     })
   }
 
