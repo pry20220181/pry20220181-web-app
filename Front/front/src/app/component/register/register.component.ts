@@ -34,8 +34,10 @@ export class RegisterComponent implements OnInit {
       this.showpageP = true
     }else{
       this.register.personnelRequest(this.usuario).subscribe(data=>{
-        console.log("DATA register",data)
+        alert("Usuario registrado")
+        this.appCom.onToggleLogin(true)
         this.router.navigate(['/', 'login']);
+        console.log("DATA register",data)
       })
       this.showpageP = false
     }
