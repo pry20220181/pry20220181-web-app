@@ -82,6 +82,15 @@ export class ChildformComponent implements OnInit {
     this.cont===0?this.childData.pop():null
     this.childData.push({dni:this.usuario.dni,firstName:this.usuario.nombre,lastName:this.usuario.apellido,birthdate:new Date(this.usuario.birthdate).toISOString(),gender:this.usuario.genero})
 
+    //clean text boxes
+    this.usuario = {
+      nombre: '',
+      apellido: '',
+      dni: '',
+      genero: '',
+      birthdate: '',
+    }
+
     this.finalData.children=this.childData
     this.cont++
 
