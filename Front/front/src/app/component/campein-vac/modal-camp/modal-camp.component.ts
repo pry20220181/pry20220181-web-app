@@ -82,11 +82,13 @@ export class ModalCampComponent implements OnInit {
         this.finalData.vaccinesForCampaign.push({vaccineId:this.listVaccines[i].id})
       }
     }
-    this.appComp.changemodalCamp(false)
+    
     console.log(this.finalData)
     this.campaing.post(this.finalData).subscribe(result=>{
       console.log(result)
+      alert("Campaña registrada")
     })
+    this.appComp.changemodalCamp(false)
   }
 
   selected() {
