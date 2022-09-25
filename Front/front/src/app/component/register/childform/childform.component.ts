@@ -58,8 +58,6 @@ export class ChildformComponent implements OnInit {
     private register: Register) { }
 
   ngOnInit(): void {
-
-    console.log("child compo", this.parentdata)
     this.finalData.children.pop()
     this.chargedataParent()
   }

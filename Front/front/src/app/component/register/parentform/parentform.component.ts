@@ -24,12 +24,9 @@ export class ParentformComponent implements OnInit {
   
 
   ngOnInit(): void {
-    console.log("Entroooo")
     this.ubigeo.getAll().subscribe((data:any)=>{
       this.ubigeoData=data.value.ubigeos
-      console.log("DATA",data)
     })
-    console.log("data",this.parentData)
   }
   
   Register() {

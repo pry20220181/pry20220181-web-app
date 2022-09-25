@@ -5,6 +5,7 @@ import { VaccinationAd } from '../models/Vaccination-Ad-model';
 import { VaccinationRe } from '../models/Vaccination-Re-model';
 import { tap } from 'rxjs/operators';
 import { Vaccination } from '../models/vaccination-model';
+import { VaccInve } from '../models/VaccInve-model';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,11 @@ export class VaccinationRquest {
 
   postVacciAppo(data:any){
     return this.http.post(this.API + '/vaccination/appointments', data);
+  }
+
+  getVaccInve(heldId:number, vaccId:number):Observable<VaccInve> {
+    return this.http.get<VaccInve>(this.API + '/vaccines/inventory?healthCenterId='+heldId+'&vaccineId='+vaccId)
+
   }
 
 }
