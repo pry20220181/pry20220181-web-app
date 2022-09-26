@@ -15,6 +15,7 @@ import { RoleGuardD } from './shared/role.guard';
 import { RoleGuardP } from './shared/roleP.guard';
 import { DetailVacParentComponent } from './component/detail-vac-parent/detail-vac-parent.component';
 import { VaccInventoryComponent } from './component/vacc-inventory/vacc-inventory.component';
+import { InfoVaccHpComponent } from './component/info-vacc-hp/info-vacc-hp.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'citas-p', component: CitaParentComponent, canActivate: [AuthGuard, RoleGuardP] },
   { path: 'detail-vac-p', component: DetailVacParentComponent, canActivate: [AuthGuard, RoleGuardP] },
   { path: 'vacc-invent', component: VaccInventoryComponent, canActivate: [AuthGuard, RoleGuardD] },
+  { path: 'info-vac', component: InfoVaccHpComponent, canActivate: [AuthGuard, RoleGuardD] },
 ];
 
 

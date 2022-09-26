@@ -20,6 +20,11 @@ export const navbarDataDoctor = [
         label: 'Citas'
     },
     {
+        routeLink:'info-vac',
+        icon: 'fal fa-solid fa-user-plus',
+        label: 'Informacion de Vacuna'
+    },
+    {
         routeLink:'vacc-invent',
         icon: 'fal fa-solid fa-ballot',
         label: 'Inventario de Vacunas'
