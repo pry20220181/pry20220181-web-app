@@ -9,7 +9,7 @@ import { DoseReminder } from '../models/Dose-Reminder-Model';
 
 export class Reminders {
 
-    private API = 'https://localhost:5001';
+    private API = 'http://localhost:5114';
 
     constructor(private http: HttpClient) { }
 

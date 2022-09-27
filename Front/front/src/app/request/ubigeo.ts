@@ -9,7 +9,7 @@ import { ubioModel } from '../models/ubigeo-model';
 
 export class Ubigeo {
 
-  private API = 'https://localhost:5001';
+  private API = 'http://localhost:5114';
 
   constructor(private http: HttpClient) { }
 

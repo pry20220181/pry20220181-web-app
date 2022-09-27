@@ -12,7 +12,7 @@ import { Vaccination } from '../models/vaccination-model';
 
 export class VaccinationRquest {
 
-  private API = 'https://localhost:5001';
+  private API = 'http://localhost:5114';
   //private API = 'http://localhost:5000';
   private _refresh$ = new Subject<void>()
 
