@@ -28,6 +28,8 @@ export class AppComponent implements OnInit {
   screenWidth = 0;
   modalinf = false;
   modalcamp = false;
+  modalcavniv = false;
+  modalinfovacc = false;
   loged = localStorage.getItem('token') ? true : false;
   login = true
 
@@ -58,5 +60,14 @@ export class AppComponent implements OnInit {
   Log(log: boolean) {
     this.loged = log
     //console.log("LOG")
+  }
+
+  changemodalVaccInv(modal: boolean) {
+    this.modalcavniv = modal
+    //console.log(this.modal)
+  } 
+  changemodalInfoVacc(modal: boolean) {
+    this.modalinfovacc = modal
+    //console.log(this.modal)
   }
 }

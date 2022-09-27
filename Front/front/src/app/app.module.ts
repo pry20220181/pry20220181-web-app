@@ -25,6 +25,9 @@ import { ModalCampComponent } from './component/campein-vac/modal-camp/modal-cam
 import { CitaParentComponent } from './component/cita-parent/cita-parent.component';
 import { DetailVacParentComponent } from './component/detail-vac-parent/detail-vac-parent.component';
 import { VaccInventoryComponent } from './component/vacc-inventory/vacc-inventory.component';
+import { ModalVaccInvenComponent } from './component/vacc-inventory/modal-vacc-inven/modal-vacc-inven.component';
+import { InfoVaccHpComponent } from './component/info-vacc-hp/info-vacc-hp.component';
+import { ModalRegisInfVaccComponent } from './component/info-vacc-hp/modal-regis-inf-vacc/modal-regis-inf-vacc.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { VaccInventoryComponent } from './component/vacc-inventory/vacc-inventor
     ModalCampComponent,
     CitaParentComponent,
     DetailVacParentComponent,
-    VaccInventoryComponent
+    VaccInventoryComponent,
+    ModalVaccInvenComponent,
+    InfoVaccHpComponent,
+    ModalRegisInfVaccComponent,
   ],
   imports: [
     BrowserModule,

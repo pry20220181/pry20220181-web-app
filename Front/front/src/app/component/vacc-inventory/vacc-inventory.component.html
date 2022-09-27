@@ -1,20 +1,47 @@
+
+<div>
+    <button type="button" class="btn btn-success" (click)="openModal()">Registrar Campaña de Vacunación</button>
+</div>
+
 <div class="accordion" id="accordionExample">
-    <div class="accordion-item" *ngFor="let data of ListCenter; index as i">
-        <h2 class="accordion-header" id='headingOn'>
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target=#a
-                aria-expanded="true" aria-controls="collapseOne">
-                {{data.name}}
-            </button>
-        </h2>
-        <div id=a class="accordion-collapse collapse show" aria-labelledby="headingOn"
-            data-bs-parent="#accordionExample">
+    <div class="accordion-item" *ngFor="let data of ListCenter; let i = index">
+        <h2 class="accordion-header" [attr.id]="'heading' + i">
+            <button class="accordion-button" type="button"
+                  (click)='openAccordion[i] = !openAccordion[i]'
+                      [attr.data-target]="'#collapse' + i" aria-expanded="true" [attr.aria-controls]="'collapse' + i">
+                      {{ data.name }}
+                  </button>
+          </h2>
+          <div [attr.id]="'collapse' + i" class="accordion-collapse collapse" [class.show]='openAccordion[i]'
+            [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
-                plugin adds the appropriate classes that we use to style each element. These classes control the overall
-                appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go
-                within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <div class="dataTable-container border-0">
+                    <table class="table table-hover text-sm text-gray-700 mb-0 dataTable-table"
+                        id="ordersDatatable">
+                        <thead>
+                            <tr class="titles">
+                                <th class="text-center" ><a  class=" text-center">Vacuna</a></th>
+                                <th class="text-center" ><a class=" text-center">Cantidad</a></th>
+                                <th class="text-center" ><a  class="text-center">Detalle</a></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tr align-middle" *ngFor="let data of ListInfoVacc[i]; let j = index">
+                                <td class="td text-center">
+                                    {{data.vaccineName}}
+                                </td>
+                                <td class="td text-center">
+                                    {{data.stock}}
+                                </td>
+                                <td class="td text-center" (click)="RedirectVac(data.vacunaid)" style="cursor:pointer ;">
+                                    <i class="eye fa fa-eye" style="width: 100%;text-align: center"
+                                            aria-hidden="true"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
+          </div>
     </div>
 </div>

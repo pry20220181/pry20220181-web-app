@@ -27,3 +27,13 @@
     <app-modal-camp></app-modal-camp>
 </div>
 <ng-template #elseBlock></ng-template>
+
+<div *ngIf="modalcavniv; else elseBlock">
+    <app-modal-vacc-inven></app-modal-vacc-inven>
+</div>
+<ng-template #elseBlock></ng-template>
+
+<div *ngIf="modalinfovacc; else elseBlock">
+    <app-modal-regis-inf-vacc></app-modal-regis-inf-vacc>
+</div>
+<ng-template #elseBlock></ng-template>
