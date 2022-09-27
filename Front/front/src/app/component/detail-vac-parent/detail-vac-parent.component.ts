@@ -21,9 +21,13 @@ export class DetailVacParentComponent implements OnInit {
       console.log("Para Detalle Vacuna se mostrará del ID: " + vaccineId)
       this.vaccineR.getVaccineById(vaccineId).subscribe((response: any) => {
         let vaccineFromApi = response['value']['vaccine']
+        console.log(vaccineFromApi)
         this.vaccine = {
           vaccineId : vaccineFromApi.id,
-          vaccineName : vaccineFromApi.name
+          vaccineName : vaccineFromApi.name,
+          description : vaccineFromApi.description,
+          minTemperature: vaccineFromApi.minTemperature,
+          maxTemperature: vaccineFromApi.maxTemperature
         }
       })
     });
