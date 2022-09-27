@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content" style="width: 700px; align-items: center;">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Registrar Campaña de Vacunación</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Inventario de Vacunas</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
                     (click)="toggleleModal()"></button>
             </div>
@@ -13,9 +13,9 @@
                         <div class="col">
                             <form>
                                 <div class="name">
-                                    <label for="formGroupExampleInput">Cantidad de vacunas</label>
+                                    <label for="formGroupExampleInput">Cantidad de vacunas a agregar</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="Nombre Campaña" [(ngModel)]="countVacc"
+                                        placeholder="cantidad de vacunas" [(ngModel)]="countVacc"
                                         [ngModelOptions]="{standalone: true}">
                                 </div>
                                 <div class="place-campein">
@@ -33,7 +33,7 @@
                             <div class="mb-3">
                                 <form>
                                     <div class="place-campein">
-                                        <label for="formGroupExampleInput2">Vacunas a poner</label>
+                                        <label for="formGroupExampleInput2">Vacuna</label>
                                         <select class="form-select" style="margin-bottom: 1em;"
                                             aria-label="Default select example" [(ngModel)]="Vacc"
                                             [ngModelOptions]="{standalone: true}">

@@ -10,45 +10,45 @@ import { VaccinationRquest } from 'src/app/request/vaccination-request';
 })
 export class VaccInventoryComponent implements OnInit {
 
-  constructor(private helthcenter:HealthCenterRequest,
-    private vacc:VaccinationRquest,
+  constructor(private helthcenter: HealthCenterRequest,
+    private vacc: VaccinationRquest,
     private appComp: AppComponent,
 
-    ) { }
+  ) { }
   openAccordion: boolean[] = []
-  ListCenter:any[]=[]
-  ListInfoVacc:any[]=[]
+  ListCenter: any[] = []
+  ListInfoVacc: any[] = []
 
   ngOnInit(): void {
     this.getAllCenter()
-    
-    setTimeout(()=>{
+
+    setTimeout(() => {
       this.getInfoVacc()
     }, 500);
   }
 
-  getAllCenter(){
-    this.helthcenter.getAll().subscribe((res:any) =>{
-      this.ListCenter=res.value.healthCenters
+  getAllCenter() {
+    this.helthcenter.getAll().subscribe((res: any) => {
+      this.ListCenter = res.value.healthCenters
     })
   }
 
-  getInfoVacc(){
+  getInfoVacc() {
     this.ListInfoVacc.pop()
-    for(var i=0; i<this.ListCenter.length;i++){
-    this.vacc.getVaccInve(this.ListCenter[i].healthCenterId,0).subscribe((res:any)=>{
-      this.ListInfoVacc.push(res.value.inventories)
+    for (var i = 0; i < this.ListCenter.length; i++) {
+      this.vacc.getVaccInve(this.ListCenter[i].healthCenterId, 0).subscribe((res: any) => {
+        this.ListInfoVacc.push(res.value.inventories)
 
-    })
-  }
-  
-  }
-
-  RedirectVac(id:string){
+      })
+    }
 
   }
 
-  openModal(){
+  RedirectVac(id: string) {
+
+  }
+
+  openModal() {
     this.appComp.changemodalVaccInv(true)
   }
 }
