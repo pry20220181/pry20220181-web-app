@@ -67,8 +67,6 @@ export class ListVaccinatedViewPComponent implements OnInit {
   }
 
   RedirectVac(id:number){
-
-    alert("Se irá a la vacuna con ID: " + id)
     this.router.navigate(["/","detail-vac-p", id])
   }
 

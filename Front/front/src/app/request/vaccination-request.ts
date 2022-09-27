@@ -7,6 +7,7 @@ import { tap } from 'rxjs/operators';
 import { Vaccination } from '../models/vaccination-model';
 import { VaccInve } from '../models/VaccInve-model';
 import { VacSchems } from '../models/vaccination-schemes-model';
+import { Vaccine } from '../models/Vaccine-model'
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,10 @@ export class VaccinationRquest {
   }
   getAll(): Observable<Vaccination> {
     return this.http.get<Vaccination>(this.API + "/vaccines?fields=all");
+  }
+
+  getVaccineById(id:number): Observable<Vaccine> {
+    return this.http.get<Vaccine>(this.API + "/vaccines/" + id);
   }
 
   getinfoChildById(id:number): Observable<VaccinationAd> {
