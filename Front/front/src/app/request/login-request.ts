@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 
 export class LoginRequest {
 
-  private API = 'http://localhost:5114';
+  private API = 'http://localhost:5000';
   //private API = 'http://localhost:5000';
 
   constructor(private http: HttpClient) { }

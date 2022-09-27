@@ -60,15 +60,16 @@ export class ListVaccinatedViewPComponent implements OnInit {
             administrationDate = `${administrationDate.substring(11,16)} ${administrationDate.substring(8,10)}-${administrationDate.substring(5,7)}-${administrationDate.substring(0,4)}`
           }
 
-          this.ListShow.push({esquema:scheme.name,vacunaid:vaccines.vaccinesId,vacunas:vaccines.name,dosis:doses.doseNumber,fecha: administrationDate,doctor:doses.healthPersonnel?.fullname ?? "-",obs:doses.observations})
+          this.ListShow.push({esquema:scheme.name,vacunaid:vaccines.vaccineId,vacunas:vaccines.name,dosis:doses.doseNumber,fecha: administrationDate,doctor:doses.healthPersonnel?.fullname ?? "-",obs:doses.observations})
         }
       }
     }
   }
+
   RedirectVac(id:number){
 
-
-    this.router.navigate(["/","detail-vac-p"])
+    alert("Se irá a la vacuna con ID: " + id)
+    this.router.navigate(["/","detail-vac-p", id])
   }
 
 }

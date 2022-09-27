@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'list-va-vp', component: ListVaccinatedViewPComponent, canActivate: [AuthGuard, RoleGuardP] },
   { path: 'campein-vac', component: CampeinVacComponent, canActivate: [AuthGuard, RoleGuardD] },
   { path: 'citas-p', component: CitaParentComponent, canActivate: [AuthGuard, RoleGuardP] },
-  { path: 'detail-vac-p', component: DetailVacParentComponent, canActivate: [AuthGuard, RoleGuardP] },
+  { path: 'detail-vac-p/:vaccineid', component: DetailVacParentComponent, canActivate: [AuthGuard, RoleGuardP] },
   { path: 'vacc-invent', component: VaccInventoryComponent, canActivate: [AuthGuard, RoleGuardD] },
   { path: 'info-vac', component: InfoVaccHpComponent, canActivate: [AuthGuard, RoleGuardD] },
 ];

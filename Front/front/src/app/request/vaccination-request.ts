@@ -14,7 +14,7 @@ import { VacSchems } from '../models/vaccination-schemes-model';
 
 export class VaccinationRquest {
 
-  private API = 'http://localhost:5114';
+  private API = 'http://localhost:5000';
   //private API = 'http://localhost:5000';
   private _refresh$ = new Subject<void>()
 
