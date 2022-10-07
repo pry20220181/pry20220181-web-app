@@ -9,21 +9,24 @@ import { Service } from 'src/app/service/service';
 })
 export class HomePComponent implements OnInit {
 
-  // List=[{via:'asd'},{via:'aq'}]
-  List:any[]=[]
+  List: any[] = []
+  Listaux: any[] = []
+  ListAppointments: any[] = []
+  ListAppointmentsaux:any[]=[]
 
   dateTime = new Date()
 
   constructor(private reminder: Reminders,
-    private _servie:Service) { }
+    private _servie: Service) { }
 
   ngOnInit(): void {
-    console.log( this.dateTime.getFullYear()+"-"+this.dateTime.getMonth()+"-"+this.dateTime.getDate())
+    console.log(this.dateTime.getFullYear() + "-" + this.dateTime.getMonth() + "-" + this.dateTime.getDate())
     this.getDoses()
+    this.getAppointments()
   }
 
   getDoses() {
-    this.reminder.getDoses(this._servie.getIdP(), this.dateTime.getFullYear()+"-"+this.dateTime.getMonth()+"-"+this.dateTime.getDate()).subscribe((result: any) => {
+    this.reminder.getDoses(this._servie.getIdP(), this.dateTime.getFullYear() + "-" + this.dateTime.getMonth() + "-" + this.dateTime.getDate()).subscribe((result: any) => {
       console.log(result.value.dosesReminders)
       let doseReminders = result.value.dosesReminders
       for (let i = 0; i < doseReminders.length; i++) {
@@ -36,11 +39,32 @@ export class HomePComponent implements OnInit {
           vaccineName: element.dose.vaccineName
         })
       }
-      
-      /*
-      
-      */
+      this.Listaux=this.List
+      this.Listaux.shift()
     })
+  }
+  getAppointments() {
+    this.reminder.getAppointments(this.dateTime.getFullYear() + "-" + this.dateTime.getMonth() + "-" + this.dateTime.getDate()).subscribe((result: any) => {
+      console.log("RESULT", result.value.vaccinationAppointmentReminders )
+      let Appointment = result.value.vaccinationAppointmentReminders
+
+      for (let i = 0; i < Appointment.length; i++) {
+        if (Appointment[i].parent.parentId===this._servie.getIdP()) {
+          console.log("entro")
+          this.ListAppointments.push({
+            index: i,
+            appointmentDate: Appointment[i].vaccinationAppointment.appointmentDateTime,
+            childName: Appointment[i].vaccinationAppointment.child.fullname,
+            addressAppointment: Appointment[i].vaccinationAppointment.healthCenter.address,
+            vaccineName: Appointment[i].vaccinationAppointment.vaccines
+          })
+        }
+      }
+      this.ListAppointmentsaux=this.ListAppointments
+      this.ListAppointmentsaux.shift()
+
+    })
+
   }
 
 }

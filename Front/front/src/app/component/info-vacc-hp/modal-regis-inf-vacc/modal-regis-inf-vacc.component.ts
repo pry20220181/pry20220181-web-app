@@ -31,7 +31,7 @@ export class ModalRegisInfVaccComponent implements OnInit {
   getVaccSchems() {
     this.vaccination.getVaccSchems().subscribe((data: any) => {
       this.ListSchems = data.value.vaccines
-      console.log(data)
+      console.log("schemes",data)
     })
   }
 

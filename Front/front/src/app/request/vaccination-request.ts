@@ -67,7 +67,7 @@ export class VaccinationRquest {
   }
 
   getVaccSchems():Observable<VacSchems> {
-    return this.http.get<VacSchems>(this.API + '/vaccination/schemes')
+    return this.http.get<VacSchems>('http://localhost:5000' + '/vaccination/schemes')
 
   }
 
