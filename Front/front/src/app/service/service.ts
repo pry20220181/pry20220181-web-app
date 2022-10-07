@@ -15,8 +15,17 @@ export class Service {
     rol:string=''
     idParent=0
     vacId=0
+    invetoryId=0
 
     constructor(){}
+
+    getInventoryId(){
+        return this.invetoryId
+    }
+
+    setInventoryId(dni:number){
+        this.invetoryId=dni
+    }
 
     getDNIChild(){
         return this.dniChild

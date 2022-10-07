@@ -1,8 +1,3 @@
-
-<div>
-    <button type="button" class="btn btn-success" (click)="openModal()" style="margin-bottom: 2em;">Agregar Inventario de Vacunas</button>
-</div>
-
 <div class="accordion" id="accordionExample">
     <div class="accordion-item" *ngFor="let data of ListCenter; let i = index">
         <h2 class="accordion-header" [attr.id]="'heading' + i">
@@ -33,9 +28,10 @@
                                 <td class="td text-center">
                                     {{data.stock}}
                                 </td>
-                                <td class="td text-center" (click)="RedirectVac(data.vacunaid)" style="cursor:pointer ;">
+                                <td class="td text-center" (click)="RedirectVac(data.vacunaid)" (click)="openModal(data.inventoryId)" style="cursor:pointer ;">
                                     <i class="eye fa fa-eye" style="width: 100%;text-align: center"
                                             aria-hidden="true"></i>
+                                            
                                 </td>
                             </tr>
                         </tbody>

@@ -13,38 +13,12 @@
                         <div class="col">
                             <form>
                                 <div class="name">
-                                    <label for="formGroupExampleInput">Cantidad de vacunas a agregar</label>
+                                    <label for="formGroupExampleInput">Cantidad de Stock</label>
                                     <input type="text" class="form-control" id="formGroupExampleInput"
-                                        placeholder="cantidad de vacunas" [(ngModel)]="countVacc"
+                                        placeholder="cantidad de Stock" [(ngModel)]="countVacc"
                                         [ngModelOptions]="{standalone: true}">
-                                </div>
-                                <div class="place-campein">
-                                    <label for="formGroupExampleInput2">Centro de Salud</label>
-                                    <select class="form-select" style="margin-bottom: 1em;"
-                                        aria-label="Default select example" [(ngModel)]="centerData"
-                                        [ngModelOptions]="{standalone: true}">
-                                        <option *ngFor="let data of listUbigeo; index as i" [value]="[data.healthCenterId,data.name]">
-                                            {{data.name}}</option>
-                                    </select>
                                 </div>
                             </form>
-                        </div>
-                        <div class="col">
-                            <div class="mb-3">
-                                <form>
-                                    <div class="place-campein">
-                                        <label for="formGroupExampleInput2">Vacuna</label>
-                                        <select class="form-select" style="margin-bottom: 1em;"
-                                            aria-label="Default select example" [(ngModel)]="Vacc"
-                                            [ngModelOptions]="{standalone: true}">
-                                            <option *ngFor="let data of listVaccines; index as i"
-                                                [value]="[data.id,data.name]">
-                                                {{data.name}}
-                                            </option>
-                                        </select>
-                                    </div>
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div>

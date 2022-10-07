@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
-import { HealthCenterRequest } from 'src/app/request/healthcenter-request';
-import { Ubigeo } from 'src/app/request/ubigeo';
 import { VaccinationRquest } from 'src/app/request/vaccination-request';
+import { Service } from 'src/app/service/service';
 declare var $: any;
 
 @Component({
@@ -13,8 +12,8 @@ declare var $: any;
 export class ModalVaccInvenComponent implements OnInit {
 
   constructor(private appComp: AppComponent,
-    private centers: HealthCenterRequest,
-    private vaccination: VaccinationRquest,) { }
+    private vaccination: VaccinationRquest,
+    private _service: Service) { }
 
   listVaccines: any[] = []
   listUbigeo: any[] = []
@@ -24,35 +23,17 @@ export class ModalVaccInvenComponent implements OnInit {
 
   finalData = {
       inventoryId: 0,
-      vaccineId: 0,
-      healthCenterId: 0,
-      vaccineName: "string",
-      healthCenterName: "string",
-      stock: 0
+      stockToAdd: 0,
   }
   ngOnInit(): void {
     
-    this.getPlaces()
-    this.getVacinnes()
-
     $(document).ready(function () {
       $("#exampleModal1").modal('show')
     });
-  }
-  getVacinnes() {
-    this.vaccination.getAll().subscribe((data: any) => {
-      this.listVaccines = data.value.vaccines
-      console.log(data)
-    })
-  }
-  getPlaces() {
-    this.centers.getAll().subscribe((data: any) => {
-      this.listUbigeo = data.value.healthCenters
-      console.log(data)
-      console.log("list",this.listUbigeo)
 
-    })
+    console.log("id",this._service.getInventoryId())
   }
+ 
 
   toggleleModal() {
     this.appComp.changemodalVaccInv(false)
@@ -60,15 +41,8 @@ export class ModalVaccInvenComponent implements OnInit {
 
   RegisterModal() {
 
-    
-    this.finalData.healthCenterId=parseInt(this.centerData[0])
-    this.finalData.healthCenterName=this.centerData.slice(2)
-    this.finalData.inventoryId=1
-    this.finalData.stock=parseInt(this.countVacc)
-    this.finalData.vaccineId=parseInt(this.Vacc[0])
-    this.finalData.vaccineName= this.Vacc.slice(2)
-    
-    console.log("final",this.finalData)
+    this.finalData.inventoryId=this._service.getInventoryId()
+    this.finalData.stockToAdd=this.countVacc
 
     this.vaccination.postVaccInv(this.finalData).subscribe(res=>{
       console.log(res)
