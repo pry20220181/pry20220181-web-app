@@ -10,9 +10,7 @@ import { Service } from 'src/app/service/service';
 export class HomePComponent implements OnInit {
 
   List: any[] = []
-  Listaux: any[] = []
   ListAppointments: any[] = []
-  ListAppointmentsaux:any[]=[]
 
   dateTime = new Date()
 
@@ -39,20 +37,17 @@ export class HomePComponent implements OnInit {
           vaccineName: element.dose.vaccineName
         })
       }
-      this.Listaux=this.List
-      this.Listaux.shift()
     })
   }
   getAppointments() {
+    let bool=false
     this.reminder.getAppointments(this.dateTime.getFullYear() + "-" + this.dateTime.getMonth() + "-" + this.dateTime.getDate()).subscribe((result: any) => {
       console.log("RESULT", result.value.vaccinationAppointmentReminders )
       let Appointment = result.value.vaccinationAppointmentReminders
-
       for (let i = 0; i < Appointment.length; i++) {
         if (Appointment[i].parent.parentId===this._servie.getIdP()) {
           console.log("entro")
           this.ListAppointments.push({
-            index: i,
             appointmentDate: Appointment[i].vaccinationAppointment.appointmentDateTime,
             childName: Appointment[i].vaccinationAppointment.child.fullname,
             addressAppointment: Appointment[i].vaccinationAppointment.healthCenter.address,
@@ -60,9 +55,6 @@ export class HomePComponent implements OnInit {
           })
         }
       }
-      this.ListAppointmentsaux=this.ListAppointments
-      this.ListAppointmentsaux.shift()
-
     })
 
   }
