@@ -52,9 +52,14 @@ export const navbarDataParents = [
         icon: 'fal fa-solid fa-user-plus',
         label: 'Citas'
     },
-     {
-        routeLink:'login',
-        icon: 'fal fa-exclamation-triangle',
-        label: 'logout'
+    {
+        routeLink:'vacc-inventp',
+        icon: 'fal fa-solid fa-ballot',
+        label: 'Inventario de Vacunas'
     },
+    {
+       routeLink:'login',
+       icon: 'fal fa-exclamation-triangle',
+       label: 'logout'
+   },
 ]

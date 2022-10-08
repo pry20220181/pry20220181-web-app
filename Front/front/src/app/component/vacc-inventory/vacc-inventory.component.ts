@@ -45,9 +45,6 @@ export class VaccInventoryComponent implements OnInit {
     }
   }
 
-  RedirectVac(id: string) {
-
-  }
 
   openModal(value:string) {
     this.appComp.changemodalVaccInv(true)

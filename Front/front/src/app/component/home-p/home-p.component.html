@@ -1,38 +1,48 @@
-<div id="asd" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner" >
+
+<div class="page1">
+  <div id="asd" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
     <div class="carousel-item" *ngFor="let data of ListAppointments; let i= index" [ngClass]="i === 0? ' active':''">
       <div class="card" style="width: 18rem; left: 40%;">
-      <div class="card-body">
-        <h5 class="card-title">Recordatorio de Dosis</h5>
-        <p class="card-text"> recuerda que tu hijo/a {{data.childName}}
-          debe recibir las vacunas {{data.vaccineName}} y dosis {{data.doseNumber}}</p>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#asd" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#asd" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-  <div id="qwe" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item" *ngFor="let data of List; let i= index" [ngClass]="i === 0? ' active':''">
-        <div class="card" style="width: 18rem; left: 40%;">
         <div class="card-body">
-          <h5 class="card-title">Recordatorio de Dosis</h5>
+          <h5 class="card-title">Recordatorio de Cita</h5>
           <p class="card-text"> recuerda que tu hijo/a {{data.childName}}
             debe recibir las vacunas {{data.vaccineName}} y dosis {{data.doseNumber}}</p>
         </div>
       </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#qwe" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#qwe" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+      <button class="carousel-control-prev" type="button" data-bs-target="#asd" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#asd" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
+</div>
+
+
+<div class="page2">
+  <div id="qwe" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let data of List; let i= index" [ngClass]="i === 0? ' active':''">
+        <div class="card" style="width: 18rem; left: 40%;">
+          <div class="card-body">
+            <h5 class="card-title">Recordatorio de Dosis</h5>
+            <p class="card-text"> recuerda que tu hijo/a {{data.childName}}
+              debe recibir las vacunas {{data.vaccineName}} y dosis {{data.doseNumber}}</p>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#qwe" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#qwe" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

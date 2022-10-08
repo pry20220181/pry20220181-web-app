@@ -15,6 +15,19 @@ export class ModalRegisInfVaccComponent implements OnInit {
     private vaccination: VaccinationRquest,) { }
 
     ListSchems:any[]=[]
+    finalData={
+      name:'',
+      description:'',
+      minTemperature:0,
+      maxTemperature:0,
+      vaccinationSchemes:[
+        {
+          vaccinationSchemeId: 0,
+          numberOfDoses: 0,
+          possibleEffectsPostVaccine: ''
+        }
+      ]
+    }
 
   name=''
   description=''
@@ -30,8 +43,8 @@ export class ModalRegisInfVaccComponent implements OnInit {
 
   getVaccSchems() {
     this.vaccination.getVaccSchems().subscribe((data: any) => {
-      this.ListSchems = data.value.vaccines
-      console.log("schemes",data)
+      console.log("schemes",data.value.vaccinationSchemes)
+      this.ListSchems = data.value.vaccinationSchemes
     })
   }
 
@@ -40,20 +53,28 @@ export class ModalRegisInfVaccComponent implements OnInit {
   }
 
   RegisterModal() {
+   this.finalData.name=this.name
+    this.finalData.description=this.description
+    this.finalData.minTemperature=parseInt(this.minTemp)
+    this.finalData.maxTemperature=parseInt(this.maxTemp)
+    let arrschemid: any[]= []
+    for (var i=0; i<this.ListSchems.length;i++){
+      if(this.ListSchems[i].possibleEffectsPostVaccine===true){
+        arrschemid.push({
+          vaccinationSchemeId:this.ListSchems[i].vaccinationSchemeId,
+          numberOfDoses:0,
+          possibleEffectsPostVaccine:''
+        })
+      }
 
-    
-   /*  this.finalData.healthCenterId=parseInt(this.centerData[0])
-    this.finalData.healthCenterName=this.centerData.slice(2)
-    this.finalData.inventoryId=1
-    this.finalData.stock=parseInt(this.countVacc)
-    this.finalData.vaccineId=parseInt(this.Vacc[0])
-    this.finalData.vaccineName= this.Vacc.slice(2) 
+    }
+    this.finalData.vaccinationSchemes=arrschemid
     
     console.log("final",this.finalData)
 
-    this.vaccination.postVaccInv(this.finalData).subscribe(res=>{
+    this.vaccination.postVacc(this.finalData).subscribe(res=>{
       console.log(res)
-    })*/
+    })
     this.appComp.changemodalInfoVacc(false)
   }
 }

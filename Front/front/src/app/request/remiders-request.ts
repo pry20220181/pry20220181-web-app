@@ -15,11 +15,15 @@ export class Reminders {
     constructor(private http: HttpClient) { }
 
     getDoses(parentid: number, date: string): Observable<DoseReminder> {
-        return this.http.get<DoseReminder>(this.API + "/reminders/doses?parentId=" + parentid + "&sendDate=" + date);
+        return this.http.get<DoseReminder>(this.API + "/reminders/doses?parentId=" + parentid + "&sendDate=None"/* + date*/);
     }
 
     getAppointments(date: string): Observable<RemiAppo>{
     return this.http.get<RemiAppo>(this.API + "/reminders/vaccination-appointments?sendDate=None"/*+date*/);
+    }
+
+    getDoses2(): Observable<DoseReminder> {
+        return this.http.get<DoseReminder>(this.API + "/reminders/doses-by-parent");
     }
 }
 

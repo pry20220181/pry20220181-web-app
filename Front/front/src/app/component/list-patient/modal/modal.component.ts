@@ -19,9 +19,11 @@ export class ModalComponent implements OnInit {
   healthcenter:any
 
   registerData = {
-    DoseDetailId:0,
+    doseDetailId:0,
     childId:0,
     healthCenterId:0,
+    healthPersonnelId:0,
+    doseDate:'',
     observations:''
   }
 
@@ -51,11 +53,11 @@ export class ModalComponent implements OnInit {
   }
 
   RegisterModal(){
-    this.registerData.DoseDetailId=this.ListVaccinationRe.remainingDoseId
+    this.registerData.doseDetailId=this.ListVaccinationRe.remainingDoseId
     this.registerData.childId=this._service.getIdChild()
     this.registerData.healthCenterId=parseInt(this.healthcenter)
     this.registerData.observations='obs'
-    
+    this.registerData.doseDate='2022-10-07T22:20:40.706Z'
     this.VaccinationR.postVa(this.registerData).subscribe(result =>{
       if (result != null){
         console.log(result)

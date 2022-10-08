@@ -71,5 +71,10 @@ export class VaccinationRquest {
 
   }
 
+  postVacc(data:any) {
+    return this.http.post('http://localhost:5000' + '/vaccines', data)
+
+  }
+
 }
 

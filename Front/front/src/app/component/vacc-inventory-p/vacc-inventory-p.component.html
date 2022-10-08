@@ -17,7 +17,6 @@
                             <tr class="titles">
                                 <th class="text-center" ><a  class=" text-center">Vacuna</a></th>
                                 <th class="text-center" ><a class=" text-center">Cantidad</a></th>
-                                <th class="text-center" ><a  class="text-center">Detalle</a></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,11 +26,6 @@
                                 </td>
                                 <td class="td text-center">
                                     {{data.stock}}
-                                </td>
-                                <td class="td text-center" (click)="openModal(data.inventoryId)" style="cursor:pointer ;">
-                                    <i class="eye fa fa-eye" style="width: 100%;text-align: center"
-                                            aria-hidden="true"></i>
-                                            
                                 </td>
                             </tr>
                         </tbody>

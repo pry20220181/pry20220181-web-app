@@ -9,29 +9,43 @@ import { Service } from 'src/app/service/service';
 })
 export class HomePComponent implements OnInit {
 
-  List: any[] = []
+  //List: any[] = []
   ListAppointments: any[] = []
-
+  List=[{
+    childName:'julito',
+    doseNumber:'2',
+    vaccineName:'rabia',
+  },{
+    childName:'bill',
+    doseNumber:'3',
+    vaccineName:'cancer',
+  }]
   dateTime = new Date()
 
   constructor(private reminder: Reminders,
     private _servie: Service) { }
 
   ngOnInit(): void {
-    console.log(this.dateTime.getFullYear() + "-" + this.dateTime.getMonth() + "-" + this.dateTime.getDate())
     this.getDoses()
     this.getAppointments()
+    this.getDoses2()
+    console.log("idparent",this._servie.getIdP())
+  }
+
+  getDoses2(){
+    this.reminder.getDoses2().subscribe((res:any)=>{
+      console.log("doses2",res)
+    })
   }
 
   getDoses() {
     this.reminder.getDoses(this._servie.getIdP(), this.dateTime.getFullYear() + "-" + this.dateTime.getMonth() + "-" + this.dateTime.getDate()).subscribe((result: any) => {
-      console.log(result.value.dosesReminders)
+      console.log("doses",result.value.dosesReminders)
       let doseReminders = result.value.dosesReminders
       for (let i = 0; i < doseReminders.length; i++) {
         const element = doseReminders[i];
         this.List.push({
-          index: i,
-          reminderId: element.reminderId,
+          //reminderId: element.reminderId,
           childName: element.child.name,
           doseNumber: element.dose.doseNumber,
           vaccineName: element.dose.vaccineName
@@ -40,7 +54,6 @@ export class HomePComponent implements OnInit {
     })
   }
   getAppointments() {
-    let bool=false
     this.reminder.getAppointments(this.dateTime.getFullYear() + "-" + this.dateTime.getMonth() + "-" + this.dateTime.getDate()).subscribe((result: any) => {
       console.log("RESULT", result.value.vaccinationAppointmentReminders )
       let Appointment = result.value.vaccinationAppointmentReminders
