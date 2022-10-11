@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
   modalinfovacc = false;
   loged = localStorage.getItem('token') ? true : false;
   login = true
+  modalvacccamp = false;
 
   onToggleLogin(data: boolean) {
     this.login = data
@@ -68,6 +69,10 @@ export class AppComponent implements OnInit {
   } 
   changemodalInfoVacc(modal: boolean) {
     this.modalinfovacc = modal
+    //console.log(this.modal)
+  }
+  changemodalVaccCamp(modal: boolean) {
+    this.modalvacccamp = modal
     //console.log(this.modal)
   }
 }

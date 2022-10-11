@@ -29,6 +29,8 @@ import { ModalVaccInvenComponent } from './component/vacc-inventory/modal-vacc-i
 import { InfoVaccHpComponent } from './component/info-vacc-hp/info-vacc-hp.component';
 import { ModalRegisInfVaccComponent } from './component/info-vacc-hp/modal-regis-inf-vacc/modal-regis-inf-vacc.component';
 import { VaccInventoryPComponent } from './component/vacc-inventory-p/vacc-inventory-p.component';
+import { CampVaccPComponent } from './component/camp-vacc-p/camp-vacc-p.component';
+import { ModalCampVaccPComponent } from './component/camp-vacc-p/modal-camp-vacc-p/modal-camp-vacc-p.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { VaccInventoryPComponent } from './component/vacc-inventory-p/vacc-inven
     InfoVaccHpComponent,
     ModalRegisInfVaccComponent,
     VaccInventoryPComponent,
+    CampVaccPComponent,
+    ModalCampVaccPComponent,
   ],
   imports: [
     BrowserModule,

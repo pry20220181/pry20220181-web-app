@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { Service } from 'src/app/service/service';
 
 declare var $: any;
 
@@ -11,6 +12,7 @@ declare var $: any;
 export class InfoVaccHpComponent implements OnInit {
 
   constructor(private appComp:AppComponent,
+    private service:Service
     ) { }
 
   ngOnInit(): void {

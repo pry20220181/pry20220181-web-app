@@ -58,6 +58,11 @@ export const navbarDataParents = [
         label: 'Inventario de Vacunas'
     },
     {
+        routeLink:'vacc-camp',
+        icon: 'fal fa-solid fa-ballot',
+        label: 'Vampaña de Vacunacion'
+    },
+    {
        routeLink:'login',
        icon: 'fal fa-exclamation-triangle',
        label: 'logout'

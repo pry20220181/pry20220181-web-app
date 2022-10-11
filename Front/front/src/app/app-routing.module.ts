@@ -17,6 +17,8 @@ import { DetailVacParentComponent } from './component/detail-vac-parent/detail-v
 import { VaccInventoryComponent } from './component/vacc-inventory/vacc-inventory.component';
 import { InfoVaccHpComponent } from './component/info-vacc-hp/info-vacc-hp.component';
 import { VaccInventoryPComponent } from './component/vacc-inventory-p/vacc-inventory-p.component';
+import { CampVaccPComponent } from './component/camp-vacc-p/camp-vacc-p.component';
+
 
 
 const routes: Routes = [
@@ -34,6 +36,7 @@ const routes: Routes = [
   { path: 'vacc-invent', component: VaccInventoryComponent, canActivate: [AuthGuard, RoleGuardD] },
   { path: 'info-vac', component: InfoVaccHpComponent, canActivate: [AuthGuard, RoleGuardD] },
   { path: 'vacc-inventp', component: VaccInventoryPComponent, canActivate: [AuthGuard, RoleGuardP] },
+  { path: 'vacc-camp', component: CampVaccPComponent, canActivate: [AuthGuard, RoleGuardP] },
 ];
 
 

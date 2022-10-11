@@ -8,6 +8,7 @@ import { Vaccination } from '../models/vaccination-model';
 import { VaccInve } from '../models/VaccInve-model';
 import { VacSchems } from '../models/vaccination-schemes-model';
 import { Vaccine } from '../models/Vaccine-model'
+import { VaccCamp } from '../models/vacc-camp-model';
 
 @Injectable({
   providedIn: 'root'
@@ -74,6 +75,10 @@ export class VaccinationRquest {
   postVacc(data:any) {
     return this.http.post('http://localhost:5000' + '/vaccines', data)
 
+  }
+
+  getVaccCamp():Observable<VaccCamp>{ //Esta harcodeado, ya que deberia de retornar todas las camñanas y no solo 1
+    return this.http.get<VaccCamp>(this.API + '/vaccination/campaigns?healthCenterId=1&sinceDate=None')
   }
 
 }

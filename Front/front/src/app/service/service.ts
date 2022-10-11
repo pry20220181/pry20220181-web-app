@@ -16,8 +16,16 @@ export class Service {
     idParent=0
     vacId=0
     invetoryId=0
+    vaccCampId=0
 
     constructor(){}
+    getvaccCampId(){
+        return this.vaccCampId
+    }
+
+    setvaccCampId(dni:number){
+        this.vaccCampId=dni
+    }
 
     getInventoryId(){
         return this.invetoryId

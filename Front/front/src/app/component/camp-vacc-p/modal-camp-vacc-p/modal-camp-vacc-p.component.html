@@ -1,0 +1,56 @@
+<!-- Modal -->
+<div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 700px; align-items: center;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registrar Campaña de Vacunación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="toggleleModal()"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col">
+                            <form>
+                                <div class="name mb-1">
+                                    <div class="name">
+                                    <label class="fw-bold" for="formGroupExampleInput">Nombre</label></div>
+                                    <div class="name">
+                                    <label for="asd">{{ListShow[0].name}}</label></div>
+                                </div>
+                                <div class="name mb-1">
+                                    <label class="fw-bold"for="formGroupExampleInput">Vacunas</label>
+                                    <div class="name">
+                                        <label for="asd">Example text</label></div>
+                                </div>
+                                <div class="name mb-1">
+                                    <label class="fw-bold"for="formGroupExampleInput">Descripcion de Campaña</label>
+                                    <div class="name">
+                                        <label for="asd">xample text</label></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <form>
+                                    <div  class="name mb-1">
+                                        <label class="fw-bold"for="formGroupExampleInput">Centros de Vacunacion</label>                                    <div class="name">
+                                            <label for="asd">xample text</label></div>
+                                    </div>
+                                    <div class="name mb-1">
+                                        <label class="fw-bold"for="formGroupExampleInput">Fecha de Inicio y fin</label>                                    <div class="name">
+                                            <label for="asd">xample text</label></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        (click)="toggleleModal()">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
